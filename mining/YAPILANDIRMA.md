@@ -9,13 +9,16 @@
 - 5 ) https://nanopool.org/
 - 6 ) https://www.nicehash.com/
 
-## A ) 🎢 HASHRATE HESAPLAYICI
+## A.1 ) 🎢 HASHRATE HESAPLAYICI
 
 - 1 ) https://www.cryptocompare.com/mining/calculator/eth?HashingPower=75&HashingUnit=MH%2Fs&PowerConsumption=500&CostPerkWh=0.12&MiningPoolFee=1
 - 2 ) https://www.nicehash.com/profitability-calculator/amd-rx-570-8gb
 - 3 ) https://minerstat.com/mining-calculator
 - 4 ) https://2cryptocalc.com/algo/now/etchash/25/
 - 5 ) https://etherscan.io/ether-mining-calculator
+
+## A.2 ) 🎢 POWERSUPPLY HESAPLAYICI
+- https://outervision.com/power-supply-calculator
 
 
 ## B ) ✨ CLAYMORE HAVUZ KULLANIMI START.BAT DOSYASI
