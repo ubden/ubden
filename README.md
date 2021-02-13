@@ -1,22 +1,36 @@
 ### Herkese Merhaba ; 👋
 
 
-- 🔭 Şu anda üzerinde çalışıyorum ...
+- 🔭 Şu anda üzerinde çalışıyoruz ...
+
+Trakyum.com - Trakya Endüstri Marketi
+Ardunio & Rapberry Pi Proje Geliştirme
+
+- 🌱 Şu anda öğreniyoruz ... 
+
+OEE, IOT 
+Bigdata ve Python
 
 
-- 🌱 Şu anda öğreniyorum ... 
+
+- 👯 İşbirliği yapmak istiyoruz ... 
 
 
-- 👯 İşbirliği yapmak istiyorum ... 
+
+- 🤔 Yardım arıyoruz ...
+
+Frontend Tasarım
 
 
-- 🤔 Yardım arıyorum ...
+- 💬 Bize sorun ? ... 
+
+Bilgi İşlem ve Her Türlü Teknik Sorularınızı..
 
 
-- 💬 Bana sor ... 
+- 📫 Bize nasıl ulaşılır: ... 
 
-
-- 📫 Bana nasıl ulaşılır: ... 
+0850 305 09 19 
+YILDIRIM BEYAZIT MAH. KAPTAN SOK. NO 5/7E ÇERKEZKÖY TERKİDAĞ
 
 
 - 😄 Zamirler: ... 
