@@ -10,7 +10,7 @@
 [![](https://img.shields.io/badge/Facebook-ubden-darkblue?logo=Facebook&labelColor=black)](https://Facebook.com/ubden)
 [![](https://img.shields.io/badge/Twitter-ubden-aqua?logo=Facebook&labelColor=black)](https://twitter.com/ubden)
 [![](https://img.shields.io/badge/HackerRank-ubden-brightgreen?logo=HackerRank&logoColor=Green&labelColor=black)](https://www.hackerrank.com/ubden)
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=ubden.ubden)
+
 
  </div>
   </p>
@@ -126,6 +126,7 @@
      
 ![picture](https://raw.githubusercontent.com/saadeghi/saadeghi/master/dino.gif)
 </details>
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=ubden.ubden)
 
   </div>
 </p>
