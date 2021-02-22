@@ -25,9 +25,9 @@
 [![Project Manager - CAN KURT ](https://img.shields.io/badge/-🤵%20Project%20Manager-400?)](https://github.com/ck.cankurt)
 [![Sofware Engineer - Kemal INCEKARA ](https://img.shields.io/badge/-🤵%20Sofware%20Engineer-002?)](https://github.com/kemalincekara)
 [![Frontend Developer - Ruslan Bairomavo ](https://img.shields.io/badge/-🤵%20Frontend%20Developer-004?)](https://github.com/ruslancik)
-[![Electrical Technic - Serdar ULU ](https://img.shields.io/badge/-🤵%20Electrical%20Technic-019?)](https://ubden.com)
-[![PHP Developer - Semiz ](https://img.shields.io/badge/-🤵%20PHP%20Developer-017?)](https://ubden.com)
-[![Technical Senior - Hüseyin Karaca ](https://img.shields.io/badge/-🤵%20Technical%20Senior-016?)](https://ubden.com)
+[![Electrical Technic - Serdar ULU ](https://img.shields.io/badge/-🤵%20Electrical%20Technic-119?)](https://ubden.com)
+[![PHP Developer - Semiz ](https://img.shields.io/badge/-🤵%20PHP%20Developer-217?)](https://ubden.com)
+[![Technical Senior - Hüseyin Karaca ](https://img.shields.io/badge/-🤵%20Technical%20Senior-316?)](https://ubden.com)
 
   </div>
   </p>
