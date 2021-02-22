@@ -23,7 +23,7 @@
   <div align="center">
   
 [![Project Manager - CAN KURT ](https://img.shields.io/badge/-🤵%20Project%20Manager-000?)](https://github.com/ck.cankurt)
-[![Sofware Engineer - Kemal INCEKARA ](https://img.shields.io/badge/-🤵%20Sofware%20Engineer-000?)](https://github.com/kemalincekara)
+[![Sofware Engineer - Kemal INCEKARA ](https://img.shields.io/badge/-🤵%20Sofware%20Engineer-001?)](https://github.com/kemalincekara)
 
 
   </div>
