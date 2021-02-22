@@ -22,7 +22,7 @@
 
   <div align="center">
   
-[![Projects Manager](https://img.shields.io/badge/-Python-000?&logo=python)](https://github.com/adamalston?tab=repositories&q=&type=&language=python)
+[![Project Manager](https://img.shields.io/badge/-🤵%20Project%20Manager-000?)](https://github.com/adamalston/v2)
 
 
   </div>
