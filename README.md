@@ -1,5 +1,8 @@
 **Social Accounts:**
+<p align="center">
 
+  <div align="center">
+ 
 [![](https://img.shields.io/badge/LinkedIn-Ubden-blue?logo=Linkedin&logoColor=blue&labelColor=black)](https://www.linkedin.com/company/ubden)
 [![](https://img.shields.io/badge/Gmail-info@ubden.com-red?logo=Gmail&logoColor=Red&labelColor=black)](mailto:info@ubden.com)
 [![](https://img.shields.io/badge/Telegram-ubden-blue?logo=Telegram&labelColor=black)](https://t.me/ubden)
@@ -9,6 +12,8 @@
 [![](https://img.shields.io/badge/HackerRank-ubden-brightgreen?logo=HackerRank&logoColor=Green&labelColor=black)](https://www.hackerrank.com/ubden)
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=ubden.ubden)
 
+ </div>
+  </p>
  ---
 **Languages and Tools:**
 
