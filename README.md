@@ -34,6 +34,7 @@
 
   </div>
   </p>
+  
  ---
  
 **Technologies:**
@@ -103,8 +104,10 @@
  ---
 <p align="center">
    <div align="center">
+     
 ![picture](https://raw.githubusercontent.com/saadeghi/saadeghi/master/dino.gif)
 </details>
+
   </div>
 </p>
 
