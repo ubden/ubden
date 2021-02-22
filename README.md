@@ -41,7 +41,7 @@
   <div align="center">
 
 [![PHP](https://img.shields.io/badge/-PHP-000?&logo=php)](https://github.com/ubden?tab=repositories&q=&type=&language=python)
-[![C#](https://img.shields.io/badge/-C#-000?&logo=c#)](https://github.com/ubden?tab=repositories&q=&type=&language=python)
+[![C#](https://img.shields.io/badge/-C#-000?&logo=cc)](https://github.com/ubden?tab=repositories&q=&type=&language=python)
 [![Python](https://img.shields.io/badge/-Python-000?&logo=python)](https://github.com/ubden?tab=repositories&q=&type=&language=python)
 [![JavaScript](https://img.shields.io/badge/-JavaScript-000?&logo=JavaScript&logoColor=ddc508)](https://github.com/ubden?tab=repositories&q=&type=&language=javascript)
 [![C](https://img.shields.io/badge/-C-000?&logo=C)](https://github.com/ubden?tab=repositories&q=&type=&language=c)
