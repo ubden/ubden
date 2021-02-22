@@ -22,7 +22,7 @@
 
   <div align="center">
   
-[![Project Manager - CAN KURT ](https://img.shields.io/badge/-🤵%20Project%20Manager-000?)](https://github.com/adamalston/v2)
+[![Project Manager - CAN KURT ](https://img.shields.io/badge/-🤵%20Project%20Manager-000?)](https://github.com/ck.cankurt)
 
 
   </div>
