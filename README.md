@@ -1,4 +1,4 @@
-**Social Accounts:**
+**Social Accounts:** Update : 22.07.2022
 <p align="center">
 
   <div align="center">
