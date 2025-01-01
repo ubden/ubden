@@ -82,24 +82,24 @@
    <div align="center">
   
 [![My Website](https://img.shields.io/badge/-🧬%20Our%20Website-000?)](https://www.ubden.com)
-[![COVID-19 Dashboard](https://img.shields.io/badge/-🦠%20COVID‑19%20Dashboard-000?)](https://github.com/ubden/COVID-19-Dashboard)
-[![Summarizer](https://img.shields.io/badge/-📝%20Summarizer-000?)](https://github.com/ubden/Summarizer)
-[![Overwatch](https://img.shields.io/badge/-🔬%20Overwatch-000?)](https://github.com/ubden/overwatch)
-[![KubeSat](https://img.shields.io/badge/-🛰%20KubeSat-000?)](https://github.com/ubden/kubesat)
-[![Voice Poker](https://img.shields.io/badge/-🔊%20Voice%20Poker-000?)](https://github.com/ubden/Poker)
-[![PokémonGo Map](https://img.shields.io/badge/-🗺%20PokémonGo%20Map-000?)](https://github.com/ubden/PokemonGo-Map)
+[![Coff.dev PHP Framework](https://img.shields.io/badge/-🦠%20COVID‑19%20Dashboard-000?)](https://coff.dev/)
+[![ResteChef AI](https://img.shields.io/badge/-📝%20Summarizer-000?)](https://play.google.com/store/apps/details?id=com.restechef.app)
+[![Sroject anagement](https://img.shields.io/badge/-🔬%20Overwatch-000?)](https://sroject.ruy.app/?controller=AuthController&action=login)
+[![Iyzico Free Payment](https://img.shields.io/badge/-🛰%20KubeSat-000?)](https://pay.ubd.one/login.php)
+[![Ruy.app App Library](https://img.shields.io/badge/-🔊%20Voice%20Poker-000?)](https://ruy.app)
+[![Ubd.one Link Shorter](https://img.shields.io/badge/-🗺%20PokémonGo%20Map-000?)](https://ubd.one/)
 
   </div>
 </p>
 
  ---
  
-**Cybersecurity Projects:**
+**Other Projects:**
 
 <p align="center">
    <div align="center">
   
-[![Heartbleed](https://img.shields.io/badge/-🩸%20Heartbleed-000?)](https://github.com/ubden/Heartbleed)
+[![iPublic.cc](https://img.shields.io/badge/-🩸%20Heartbleed-000?)](https://ipublic.cc/)
 [![SYN Flood](https://img.shields.io/badge/-🌊%20SYN%20Flood-000?)](https://github.com/ubden/SYN-Flood)
 [![Packet Sniffing & Spoofing](https://img.shields.io/badge/-🗂%20Packet%20Sniffing%20%26%20Spoofing-000?)](https://github.com/ubden/Packet-Sniffing-and-Spoofing)
 [![SQL Injection](https://img.shields.io/badge/-💉%20SQL%20Injection-000?)](https://github.com/ubden/SQL-Injection)
