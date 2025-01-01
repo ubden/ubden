@@ -82,12 +82,12 @@
    <div align="center">
   
 [![My Website](https://img.shields.io/badge/-🧬%20Our%20Website-000?)](https://www.ubden.com)
-[![Coff.dev PHP Framework](https://img.shields.io/badge/-🦠%20COVID‑19%20Dashboard-000?)](https://coff.dev/)
-[![ResteChef AI](https://img.shields.io/badge/-📝%20Summarizer-000?)](https://play.google.com/store/apps/details?id=com.restechef.app)
-[![Sroject anagement](https://img.shields.io/badge/-🔬%20Overwatch-000?)](https://sroject.ruy.app/?controller=AuthController&action=login)
-[![Iyzico Free Payment](https://img.shields.io/badge/-🛰%20KubeSat-000?)](https://pay.ubd.one/login.php)
-[![Ruy.app App Library](https://img.shields.io/badge/-🔊%20Voice%20Poker-000?)](https://ruy.app)
-[![Ubd.one Link Shorter](https://img.shields.io/badge/-🗺%20PokémonGo%20Map-000?)](https://ubd.one/)
+[![Coff.dev PHP Framework](https://img.shields.io/badge/-🦠%20CoffDevFramework-000?)](https://coff.dev/)
+[![ResteChef AI](https://img.shields.io/badge/-📝%20ResteChefAI-000?)](https://play.google.com/store/apps/details?id=com.restechef.app)
+[![Sroject anagement](https://img.shields.io/badge/-🔬%20Sroject-000?)](https://sroject.ruy.app/?controller=AuthController&action=login)
+[![Iyzico Free Payment](https://img.shields.io/badge/-🛰%20Iyzico-000?)](https://pay.ubd.one/login.php)
+[![Ruy.app App Library](https://img.shields.io/badge/-🔊%20Ruyapp-000?)](https://ruy.app)
+[![Ubd.one Link Shorter](https://img.shields.io/badge/-🗺%20UbdOne-000?)](https://ubd.one/)
 
   </div>
 </p>
