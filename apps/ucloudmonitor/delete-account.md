@@ -27,7 +27,7 @@ Hesap silme işlemi **geri alınamaz**! Bu nedenle, silme işlemini onaylamanız
 
 1. Açılan onay penceresinde aşağıdaki uyarı mesajını göreceksiniz:
 
-** Hesabınızı silmek istediğinize emin misiniz? Bu işlem geri alınamaz ve tüm hesap verileriniz kalıcı olarak silinecektir. ** 
+*** Hesabınızı silmek istediğinize emin misiniz? Bu işlem geri alınamaz ve tüm hesap verileriniz kalıcı olarak silinecektir. ***
 
 2. Eğer devam etmek istiyorsanız:
 - ✅ **"HESABIMI SİL"** butonuna tıklayın.
@@ -43,7 +43,7 @@ Eğer **"HESABIMI SİL"** butonuna tıkladıysanız:
 1. Uygulama, hesabınızı **kalıcı olarak silecektir**.
 2. Başarılı işlem sonrasında aşağıdaki mesaj görüntülenecektir:
 
-** ✅ Başarılı! Hesabınız başarıyla silindi. **
+*** ✅ Başarılı! Hesabınız başarıyla silindi. ***
 ![image](https://github.com/user-attachments/assets/9cfbe3ae-0eb5-44f0-a058-c6fe04b15640)
 
 
