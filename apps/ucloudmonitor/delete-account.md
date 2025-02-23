@@ -44,11 +44,10 @@ Eğer **"HESABIMI SİL"** butonuna tıkladıysanız:
 2. Başarılı işlem sonrasında aşağıdaki mesaj görüntülenecektir:
 
 *** ✅ Başarılı! Hesabınız başarıyla silindi. ***
-![image](https://github.com/user-attachments/assets/9cfbe3ae-0eb5-44f0-a058-c6fe04b15640)
-
 
 3. Artık uygulamaya giriş yapamazsınız ve tüm verileriniz sistemden silinir.
 
+![image](https://github.com/user-attachments/assets/9cfbe3ae-0eb5-44f0-a058-c6fe04b15640)
 ---
 
 ## 🔄 5. Geri Alınamaz!
