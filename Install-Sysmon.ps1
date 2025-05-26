@@ -47,7 +47,6 @@ Start-Process -FilePath $SysmonExe -ArgumentList "-accepteula -i `"$SysmonConfig
 Start-Sleep -Seconds 3
 if (Get-WinEvent -ListLog "Microsoft-Windows-Sysmon/Operational" -ErrorAction SilentlyContinue) {
     Write-Host "`n[✓] Sysmon başarıyla kuruldu ve etkinleştirildi." -ForegroundColor Green
-}
-else {
+} else {
     Write-Host "`n[!] Sysmon log kanalı bulunamadı veya etkinleştirilemedi!" -ForegroundColor Red
 }
