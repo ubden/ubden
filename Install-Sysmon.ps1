@@ -6,7 +6,7 @@ $SysmonDir = "$TempDir\Sysmon"
 $SysmonConfig = "$TempDir\sysmonconfig.xml"
 
 $SysmonURL = "https://download.sysinternals.com/files/Sysmon.zip"
-$ConfigURL = "https://raw.githubusercontent.com/OTRF/Blacksmith/main/artifacts/sysmonconfig.xml"
+$ConfigURL = "https://raw.githubusercontent.com/OTRF/Blacksmith/refs/heads/master/resources/configs/sysmon/sysmon.xml"
 
 if (Test-Path $TempDir) { Remove-Item $TempDir -Recurse -Force }
 New-Item -ItemType Directory -Path $TempDir | Out-Null
