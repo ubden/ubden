@@ -52,5 +52,6 @@ if (Get-WinEvent -ListLog "Microsoft-Windows-Sysmon/Operational" -ErrorAction Si
     Write-Host "`n[!] Sysmon log kanalı bulunamadı veya etkinleştirilemedi!" -ForegroundColor Red
 }
 
+
 # Temizlik isteğe bağlı
 # Remove-Item $TempDir -Recurse -Force
