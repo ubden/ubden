@@ -1,6 +1,5 @@
 # Install-Sysmon.ps1
-# Yazan: ChatGPT, @Cyb3rWard0g yapılandırmasıyla
-# Amaç: Sysmon kurulumu ve yapılandırmasını Windows makinelerde otomatize etmek
+# Sysmon otomatik indirme, yapılandırma ve kurulum scripti
 
 # Hedef dizinler
 $TempDir = "$env:TEMP\SysmonInstall"
@@ -31,7 +30,7 @@ if (-not (Test-Path $SysmonExe)) {
     $SysmonExe = Join-Path $SysmonDir "Sysmon.exe"  # 32-bit fallback
 }
 
-# Varsa kaldır
+# Önceki kurulum varsa kaldır
 Write-Host "[*] Önceki kurulum kontrol ediliyor..." -ForegroundColor Cyan
 $existing = Get-Process -Name "Sysmon" -ErrorAction SilentlyContinue
 if ($existing) {
@@ -48,10 +47,7 @@ Start-Process -FilePath $SysmonExe -ArgumentList "-accepteula -i `"$SysmonConfig
 Start-Sleep -Seconds 3
 if (Get-WinEvent -ListLog "Microsoft-Windows-Sysmon/Operational" -ErrorAction SilentlyContinue) {
     Write-Host "`n[✓] Sysmon başarıyla kuruldu ve etkinleştirildi." -ForegroundColor Green
-} else {
+}
+else {
     Write-Host "`n[!] Sysmon log kanalı bulunamadı veya etkinleştirilemedi!" -ForegroundColor Red
 }
-
-
-# Temizlik isteğe bağlı
-# Remove-Item $TempDir -Recurse -Force
