@@ -1,5 +1,5 @@
-# Wazuh E-posta ve Kimlik Bilgisi Toplama Script'i - Geliştirilmiş Versiyon
-# Yönetici hakları kontrolü ve kendini doğrulama mekanizması ile
+# Wazuh Email & Credential Collector - Silent Installer
+# GitHub'dan script indirip sessiz kurulum yapar
 
 param(
     [switch]$Force,
@@ -7,10 +7,48 @@ param(
 )
 
 # Global değişkenler
-$LogFile = "C:\ProgramData\Wazuh\Logs\email_cred_log.log"
-$ScriptPath = "C:\ProgramData\Wazuh\Logs\Collect-EmailAndCreds.ps1" 
+$GitHubUrl = "https://raw.githubusercontent.com/ubden/ubden/refs/heads/main/Collect-EmailAndCreds.ps1"
+$WazuhLogDir = "C:\ProgramData\Wazuh\Logs"
+$ScriptPath = "$WazuhLogDir\Collect-EmailAndCreds.ps1"
+$LogFile = "$WazuhLogDir\email_cred_log.log"
+$InstallerLog = "$WazuhLogDir\installer.log"
 $TaskName = "Wazuh_Email_Cred_Collector"
-$TimeNow = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+$TempScript = "$env:TEMP\Collect-EmailAndCreds_temp.ps1"
+
+# Sessiz log yazma
+function Write-InstallerLog {
+    param(
+        [string]$Message,
+        [string]$Level = "INFO"
+    )
+    
+    try {
+        $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+        $logEntry = "[$timestamp] [$Level] $Message"
+        
+        # Installer log'a yaz
+        if (-not (Test-Path $InstallerLog)) {
+            $null = New-Item -Path $InstallerLog -ItemType File -Force
+        }
+        Add-Content -Path $InstallerLog -Value $logEntry -Encoding UTF8 -ErrorAction SilentlyContinue
+        
+        # Sadece ERROR'ları Event Log'a yaz
+        if ($Level -eq "ERROR") {
+            try {
+                Write-EventLog -LogName Application -Source "Wazuh Collector" -EventId 1001 -EntryType Error -Message $Message -ErrorAction SilentlyContinue
+            }
+            catch {
+                # Event source yoksa oluştur
+                try {
+                    New-EventLog -LogName Application -Source "Wazuh Collector" -ErrorAction SilentlyContinue
+                    Write-EventLog -LogName Application -Source "Wazuh Collector" -EventId 1001 -EntryType Error -Message $Message -ErrorAction SilentlyContinue
+                }
+                catch { }
+            }
+        }
+    }
+    catch { }
+}
 
 # Yönetici hakları kontrolü
 function Test-IsAdmin {
@@ -27,340 +65,327 @@ function Test-IsAdmin {
 # Script'i yönetici olarak yeniden başlat
 function Restart-AsAdmin {
     if (-not (Test-IsAdmin)) {
-        Write-Host "Yonetici haklari gerekli. Script yonetici olarak yeniden baslatiliyor..." -ForegroundColor Yellow
         try {
             $arguments = ""
             if ($Force) { $arguments += " -Force" }
             if ($Uninstall) { $arguments += " -Uninstall" }
             
-            Start-Process PowerShell.exe -ArgumentList "-ExecutionPolicy Bypass -File `"$($MyInvocation.MyCommand.Path)`"$arguments" -Verb RunAs -Wait
+            Start-Process PowerShell.exe -ArgumentList "-ExecutionPolicy Bypass -WindowStyle Hidden -File `"$($MyInvocation.MyCommand.Path)`"$arguments" -Verb RunAs -Wait
             exit 0
         }
         catch {
-            Write-Error "Yonetici haklariyla calistirilamadi: $_"
+            Write-InstallerLog "Yonetici haklariyla calistirilamadi: $_" "ERROR"
             exit 1
         }
     }
 }
 
-# Güvenli dizin oluşturma
-function New-SecureDirectory {
+# Wazuh dizinini oluştur (koruma olmadan - Wazuh Agent erişimi için)
+function New-WazuhDirectory {
     param([string]$Path)
     
     try {
+        Write-InstallerLog "Wazuh dizini olusturuluyor: $Path"
+        
         if (-not (Test-Path $Path)) {
             $null = New-Item -ItemType Directory -Path $Path -Force
-            Write-Host "Dizin olusturuldu: $Path" -ForegroundColor Green
+            Write-InstallerLog "Dizin olusturuldu: $Path"
         }
         
-        # Dizin izinlerini kontrol et ve güvenli hale getir
+        # Wazuh Agent erişimi için özel izin ayarlama
         $acl = Get-Acl $Path
-        $acl.SetAccessRuleProtection($true, $false)
         
-        # Sadece SYSTEM ve Administrators erişimi
+        # SYSTEM, Administrators ve Users için tam erişim (Wazuh Agent genellikle service olarak çalışır)
         $systemRule = New-Object System.Security.AccessControl.FileSystemAccessRule("SYSTEM", "FullControl", "ContainerInherit,ObjectInherit", "None", "Allow")
         $adminRule = New-Object System.Security.AccessControl.FileSystemAccessRule("Administrators", "FullControl", "ContainerInherit,ObjectInherit", "None", "Allow")
+        $usersRule = New-Object System.Security.AccessControl.FileSystemAccessRule("Users", "ReadAndExecute", "ContainerInherit,ObjectInherit", "None", "Allow")
         
         $acl.SetAccessRule($systemRule)
         $acl.SetAccessRule($adminRule)
+        $acl.SetAccessRule($usersRule)
+        
         Set-Acl -Path $Path -AclObject $acl
         
+        Write-InstallerLog "Wazuh Agent erisimi icin izinler ayarlandi"
         return $true
     }
     catch {
-        Write-Error "Dizin olusturulamadi $Path : $_"
+        Write-InstallerLog "Wazuh dizini olusturulamadi $Path : $_" "ERROR"
         return $false
     }
 }
 
-# Güvenli log yazma
-function Write-SecureLog {
-    param(
-        [string]$Message,
-        [string]$Level = "INFO"
-    )
-    
+# GitHub'dan script indir
+function Download-ScriptFromGitHub {
     try {
-        $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-        $logEntry = "[$timestamp] [$Level] $Message"
-        Add-Content -Path $LogFile -Value $logEntry -Encoding UTF8 -ErrorAction Stop
-        Write-Host $logEntry -ForegroundColor $(if($Level -eq "ERROR"){"Red"}elseif($Level -eq "WARN"){"Yellow"}else{"White"})
+        Write-InstallerLog "GitHub'dan script indiriliyor: $GitHubUrl"
+        
+        # TLS 1.2 zorunlu
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+        
+        # Script'i indir
+        $webClient = New-Object System.Net.WebClient
+        $webClient.DownloadFile($GitHubUrl, $TempScript)
+        
+        if (Test-Path $TempScript) {
+            $fileSize = (Get-Item $TempScript).Length
+            Write-InstallerLog "Script basariyla indirildi: $fileSize bytes"
+            return $true
+        } else {
+            Write-InstallerLog "Script indirilemedi" "ERROR"
+            return $false
+        }
     }
     catch {
-        Write-Error "Log yazilamadi: $_"
+        Write-InstallerLog "GitHub'dan indirme hatasi: $_" "ERROR"
+        
+        # Alternatif olarak Invoke-WebRequest dene
+        try {
+            Write-InstallerLog "Alternatif yontem deneniyor..."
+            Invoke-WebRequest -Uri $GitHubUrl -OutFile $TempScript -UseBasicParsing
+            
+            if (Test-Path $TempScript) {
+                Write-InstallerLog "Alternatif yontemle basarili"
+                return $true
+            }
+        }
+        catch {
+            Write-InstallerLog "Alternatif yontem de basarisiz: $_" "ERROR"
+        }
+        
+        return $false
     }
 }
 
 # Script'i hedef konuma kopyala
-function Copy-ScriptToTarget {
+function Copy-ScriptToWazuh {
     try {
-        $currentScript = $MyInvocation.MyCommand.Path
-        if ($currentScript -ne $ScriptPath) {
-            if (Test-Path $ScriptPath) {
-                Remove-Item $ScriptPath -Force -ErrorAction SilentlyContinue
-            }
-            Copy-Item $currentScript $ScriptPath -Force
-            Write-SecureLog "Script hedef konuma kopyalandi: $ScriptPath"
+        Write-InstallerLog "Script Wazuh dizinine kopyalaniyor..."
+        
+        if (-not (Test-Path $TempScript)) {
+            Write-InstallerLog "Kaynak script bulunamadi: $TempScript" "ERROR"
+            return $false
+        }
+        
+        # Hedef dosya varsa sil
+        if (Test-Path $ScriptPath) {
+            Remove-Item $ScriptPath -Force -ErrorAction SilentlyContinue
+        }
+        
+        # Kopyala
+        Copy-Item $TempScript $ScriptPath -Force
+        
+        # Temp dosyasını sil
+        Remove-Item $TempScript -Force -ErrorAction SilentlyContinue
+        
+        # Doğrula
+        if (Test-Path $ScriptPath) {
+            $scriptSize = (Get-Item $ScriptPath).Length
+            Write-InstallerLog "Script basariyla kopyalandi: $ScriptPath ($scriptSize bytes)"
             return $true
+        } else {
+            Write-InstallerLog "Script kopyalanamadi" "ERROR"
+            return $false
         }
-        return $true
     }
     catch {
-        Write-SecureLog "Script kopyalanamadi: $_" "ERROR"
+        Write-InstallerLog "Kopyalama hatasi: $_" "ERROR"
         return $false
-    }
-}
-
-# Outlook e-posta adreslerini tara
-function Get-OutlookEmails {
-    Write-SecureLog "Outlook e-posta adresleri taranıyor..."
-    
-    try {
-        $emailCount = 0
-        $ProfilesPath = "HKCU:\Software\Microsoft\Office"
-        
-        if (-not (Test-Path $ProfilesPath)) {
-            Write-SecureLog "Office registry yolu bulunamadi" "WARN"
-            return
-        }
-        
-        $OfficeVersions = Get-ChildItem $ProfilesPath -ErrorAction SilentlyContinue | 
-                         Where-Object { $_.Name -match '1[6-9]\.0|[2-9][0-9]\.0' }
-        
-        foreach ($Version in $OfficeVersions) {
-            $ProfileRoot = "$($Version.PSPath)\Outlook\Profiles"
-            if (Test-Path $ProfileRoot) {
-                Get-ChildItem -Path $ProfileRoot -Recurse -ErrorAction SilentlyContinue | ForEach-Object {
-                    try {
-                        $values = Get-ItemProperty -Path $_.PSPath -ErrorAction SilentlyContinue
-                        if ($values) {
-                            foreach ($prop in $values.PSObject.Properties) {
-                                if ($prop.Value -match "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}") {
-                                    Write-SecureLog "[OUTLOOK_EMAIL] Registry: $($_.PSPath) Email: $($prop.Value)"
-                                    $emailCount++
-                                }
-                            }
-                        }
-                    }
-                    catch {
-                        Write-SecureLog "Registry anahtari okunamadi: $($_.PSPath) - $_" "WARN"
-                    }
-                }
-            }
-        }
-        
-        Write-SecureLog "Toplam $emailCount e-posta adresi bulundu"
-    }
-    catch {
-        Write-SecureLog "Outlook e-posta taramasinda hata: $_" "ERROR"
-    }
-}
-
-# Credential Manager tarama
-function Get-StoredCredentials {
-    Write-SecureLog "Kaydedilmis kimlik bilgileri taranıyor..."
-    
-    try {
-        $credCount = 0
-        $entries = cmdkey /list 2>&1
-        
-        if ($LASTEXITCODE -ne 0) {
-            Write-SecureLog "cmdkey komutu basarisiz oldu" "ERROR"
-            return
-        }
-        
-        $blocks = @()
-        $currentBlock = @()
-        
-        foreach ($line in $entries) {
-            if ($line -match "^\s*$" -and $currentBlock.Count -gt 0) {
-                $blocks += ,@($currentBlock)
-                $currentBlock = @()
-            } else {
-                $currentBlock += $line
-            }
-        }
-        
-        if ($currentBlock.Count -gt 0) {
-            $blocks += ,@($currentBlock)
-        }
-        
-        foreach ($block in $blocks) {
-            $target = $null
-            $user = $null
-            
-            foreach ($line in $block) {
-                if ($line -match "Target:\s*(.+)") {
-                    $target = $Matches[1].Trim()
-                }
-                if ($line -match "User:\s*(.+)") {
-                    $user = $Matches[1].Trim()
-                }
-            }
-            
-            # Suspicious targets (RDP, VPN, NAS, cloud services, IP addresses)
-            if ($target -and $user -and ($target -match "TERMSRV|nas|vpn|rdp|cloud|ftp|ssh|sftp|\d+\.\d+\.\d+\.\d+|\.com|\.net|\.org")) {
-                Write-SecureLog "[STORED_CREDENTIAL] Target: $target User: $user"
-                $credCount++
-            }
-        }
-        
-        Write-SecureLog "Toplam $credCount kimlik bilgisi bulundu"
-    }
-    catch {
-        Write-SecureLog "Credential Manager taramasinda hata: $_" "ERROR"
     }
 }
 
 # Zamanlanmış görev oluştur
 function New-ScheduledTask {
     try {
-        Write-SecureLog "Zamanlanmis gorev kontrol ediliyor..."
+        Write-InstallerLog "Zamanlanmis gorev olusturuluyor..."
         
         # Mevcut görevi kontrol et
         $existingTask = Get-ScheduledTask -TaskName $TaskName -ErrorAction SilentlyContinue
         
-        if ($existingTask) {
-            Write-SecureLog "Zamanlanmis gorev zaten mevcut: $TaskName"
+        if ($existingTask -and -not $Force) {
+            Write-InstallerLog "Zamanlanmis gorev zaten mevcut: $TaskName"
             return $true
+        }
+        
+        if ($existingTask) {
+            Write-InstallerLog "Mevcut gorev kaldiriliyor..."
+            Unregister-ScheduledTask -TaskName $TaskName -Confirm:$false -ErrorAction SilentlyContinue
         }
         
         # Yeni görev oluştur
         $action = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-ExecutionPolicy Bypass -WindowStyle Hidden -File `"$ScriptPath`""
         $trigger = New-ScheduledTaskTrigger -Daily -At "09:00"
         $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
-        $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable
+        $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable -ExecutionTimeLimit (New-TimeSpan -Hours 1)
         
-        $task = New-ScheduledTask -Action $action -Trigger $trigger -Principal $principal -Settings $settings -Description "Wazuh Email and Credential Monitoring"
+        $task = New-ScheduledTask -Action $action -Trigger $trigger -Principal $principal -Settings $settings -Description "Wazuh Email and Credential Monitoring - Silent Version"
         
         Register-ScheduledTask -TaskName $TaskName -InputObject $task -Force | Out-Null
         
-        Write-SecureLog "Zamanlanmis gorev basariyla olusturuldu: $TaskName"
+        Write-InstallerLog "Zamanlanmis gorev basariyla olusturuldu: $TaskName"
         return $true
     }
     catch {
-        Write-SecureLog "Zamanlanmis gorev olusturulamadi: $_" "ERROR"
+        Write-InstallerLog "Zamanlanmis gorev olusturulamadi: $_" "ERROR"
         return $false
     }
 }
 
-# Zamanlanmış görevi kaldır
-function Remove-ScheduledTask {
+# Kaldırma işlemi
+function Remove-Installation {
     try {
+        Write-InstallerLog "Wazuh Collector kaldiriliyor..."
+        
+        # Scheduled task kaldır
         $existingTask = Get-ScheduledTask -TaskName $TaskName -ErrorAction SilentlyContinue
         if ($existingTask) {
             Unregister-ScheduledTask -TaskName $TaskName -Confirm:$false
-            Write-SecureLog "Zamanlanmis gorev kaldirild: $TaskName"
-        } else {
-            Write-SecureLog "Kaldirılacak zamanlanmis gorev bulunamadi"
+            Write-InstallerLog "Zamanlanmis gorev kaldirild: $TaskName"
         }
         
+        # Script dosyasını sil
         if (Test-Path $ScriptPath) {
             Remove-Item $ScriptPath -Force
-            Write-SecureLog "Script dosyası silindi: $ScriptPath"
+            Write-InstallerLog "Script dosyasi silindi: $ScriptPath"
         }
         
+        # Log dosyasını da sil (sessiz)
+        if (Test-Path $LogFile) {
+            Remove-Item $LogFile -Force -ErrorAction SilentlyContinue
+            Write-InstallerLog "Log dosyasi silindi: $LogFile"
+        }
+        
+        Write-InstallerLog "Kaldirma islemi tamamlandi"
         return $true
     }
     catch {
-        Write-SecureLog "Zamanlanmis gorev kaldirilamadi: $_" "ERROR"
+        Write-InstallerLog "Kaldirma sirasinda hata: $_" "ERROR"
         return $false
     }
 }
 
-# Sistem bilgilerini topla
-function Get-SystemInfo {
+# Sessiz test ve doğrulama
+function Test-Installation {
     try {
-        $computerName = $env:COMPUTERNAME
-        $userName = $env:USERNAME
-        $domain = $env:USERDOMAIN
-        $osVersion = (Get-WmiObject -Class Win32_OperatingSystem).Caption
+        Write-InstallerLog "Kurulum dogrulamasi yapiliyor..."
         
-        Write-SecureLog "=== SISTEM BILGILERI ==="
-        Write-SecureLog "Bilgisayar: $computerName"
-        Write-SecureLog "Kullanici: $domain\$userName"
-        Write-SecureLog "Isletim Sistemi: $osVersion"
-        Write-SecureLog "Script Versiyonu: 2.0"
-        Write-SecureLog "========================"
+        $success = $true
+        
+        # Script dosyası var mı?
+        if (Test-Path $ScriptPath) {
+            Write-InstallerLog "Script dosyasi mevcut: $ScriptPath"
+        } else {
+            Write-InstallerLog "Script dosyasi bulunamadi!" "ERROR"
+            $success = $false
+        }
+        
+        # Scheduled task var mı?
+        $task = Get-ScheduledTask -TaskName $TaskName -ErrorAction SilentlyContinue
+        if ($task) {
+            Write-InstallerLog "Zamanlanmis gorev mevcut: $TaskName - Durum: $($task.State)"
+            $nextRun = ($task | Get-ScheduledTaskInfo).NextRunTime
+            if ($nextRun) {
+                Write-InstallerLog "Sonraki calisma: $nextRun"
+            }
+        } else {
+            Write-InstallerLog "Zamanlanmis gorev bulunamadi!" "ERROR"
+            $success = $false
+        }
+        
+        # Test çalıştırma (sessiz)
+        if ($success) {
+            Write-InstallerLog "Test calistirmasi yapiliyor..."
+            try {
+                $result = & PowerShell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File $ScriptPath 2>&1
+                Write-InstallerLog "Test calistirma basarili"
+            }
+            catch {
+                Write-InstallerLog "Test calistirma hatasi: $_" "ERROR"
+            }
+        }
+        
+        if ($success) {
+            Write-InstallerLog "KURULUM BASARIYLA TAMAMLANDI"
+        } else {
+            Write-InstallerLog "KURULUM SIRASINDA HATALAR OLUSTU" "ERROR"
+        }
+        
+        return $success
     }
     catch {
-        Write-SecureLog "Sistem bilgileri alinamadi: $_" "ERROR"
+        Write-InstallerLog "Dogrulama sirasinda hata: $_" "ERROR"
+        return $false
     }
 }
 
-# Ana fonksiyon
+# Ana fonksiyon - Sessiz çalışma
 function Main {
     # Yönetici hakları kontrolü
     Restart-AsAdmin
     
-    Write-Host "Wazuh E-posta ve Kimlik Bilgisi Collector v2.0" -ForegroundColor Cyan
-    Write-Host "=============================================" -ForegroundColor Cyan
+    Write-InstallerLog "=== WAZUH COLLECTOR SILENT INSTALLER BASLADI ==="
+    Write-InstallerLog "Installer Version: 3.0 Silent"
+    Write-InstallerLog "GitHub Source: $GitHubUrl"
     
     # Kaldırma modu
     if ($Uninstall) {
-        Write-Host "Kaldirma modu aktif..." -ForegroundColor Yellow
-        Remove-ScheduledTask
-        Write-Host "Kaldirma islemi tamamlandi." -ForegroundColor Green
-        return
+        Write-InstallerLog "Kaldirma modu aktif"
+        $result = Remove-Installation
+        Write-InstallerLog "=== KALDIRMA ISLEMI TAMAMLANDI ==="
+        exit $(if($result) { 0 } else { 1 })
     }
     
-    # Dizin oluştur
-    $logDir = Split-Path $LogFile -Parent
-    if (-not (New-SecureDirectory $logDir)) {
-        Write-Error "Kritik hata: Log dizini olusturulamadi"
+    # Kurulum adımları
+    $steps = @(
+        @{ Name = "Wazuh dizini olusturma"; Function = { New-WazuhDirectory $WazuhLogDir } },
+        @{ Name = "GitHub'dan script indirme"; Function = { Download-ScriptFromGitHub } },
+        @{ Name = "Script kopyalama"; Function = { Copy-ScriptToWazuh } },
+        @{ Name = "Zamanlanmis gorev olusturma"; Function = { New-ScheduledTask } },
+        @{ Name = "Kurulum dogrulama"; Function = { Test-Installation } }
+    )
+    
+    $stepCount = 1
+    $allSuccess = $true
+    
+    foreach ($step in $steps) {
+        Write-InstallerLog "Adim $stepCount/$($steps.Count): $($step.Name)"
+        
+        try {
+            $result = & $step.Function
+            if ($result) {
+                Write-InstallerLog "Adim $stepCount basarili: $($step.Name)"
+            } else {
+                Write-InstallerLog "Adim $stepCount basarisiz: $($step.Name)" "ERROR"
+                $allSuccess = $false
+            }
+        }
+        catch {
+            Write-InstallerLog "Adim $stepCount hatasi: $($step.Name) - $_" "ERROR"
+            $allSuccess = $false
+        }
+        
+        $stepCount++
+    }
+    
+    if ($allSuccess) {
+        Write-InstallerLog "=== TUM ADIMLAR BASARIYLA TAMAMLANDI ==="
+        Write-InstallerLog "Script Konumu: $ScriptPath"
+        Write-InstallerLog "Log Dosyasi: $LogFile"
+        Write-InstallerLog "Zamanlanmis Gorev: $TaskName (Gunluk 09:00)"
+        Write-InstallerLog "Installer Log: $InstallerLog"
+        exit 0
+    } else {
+        Write-InstallerLog "=== KURULUM SIRASINDA HATALAR OLUSTU ===" "ERROR"
         exit 1
     }
-    
-    # Script'i hedef konuma kopyala
-    if (-not (Copy-ScriptToTarget)) {
-        Write-Error "Kritik hata: Script kopyalanamadi"
-        exit 1
-    }
-    
-    # Log başlat
-    Write-SecureLog "=== WAZUH EMAIL VE CREDENTIAL TARAMASI BASLADI ==="
-    
-    # Sistem bilgilerini topla
-    Get-SystemInfo
-    
-    # E-posta tarama
-    Get-OutlookEmails
-    
-    # Credential tarama
-    Get-StoredCredentials
-    
-    # Zamanlanmış görev oluştur
-    New-ScheduledTask
-    
-    # Kendini doğrula
-    if (Test-Path $ScriptPath) {
-        Write-SecureLog "[DOGRULAMA] Script dosyasi mevcut: $ScriptPath"
-    } else {
-        Write-SecureLog "[DOGRULAMA] HATA: Script dosyasi bulunamadi!" "ERROR"
-    }
-    
-    $task = Get-ScheduledTask -TaskName $TaskName -ErrorAction SilentlyContinue
-    if ($task) {
-        Write-SecureLog "[DOGRULAMA] Zamanlanmis gorev mevcut: $TaskName"
-        Write-SecureLog "[DOGRULAMA] Gorev durumu: $($task.State)"
-    } else {
-        Write-SecureLog "[DOGRULAMA] HATA: Zamanlanmis gorev bulunamadi!" "ERROR"
-    }
-    
-    Write-SecureLog "=== TARAMA TAMAMLANDI ==="
-    Write-Host "`nTarama tamamlandi. Log dosyasi: $LogFile" -ForegroundColor Green
-    Write-Host "Zamanlanmis gorev: $TaskName (her gun 09:00)" -ForegroundColor Green
-    Write-Host "`nKaldirmak icin: PowerShell -ExecutionPolicy Bypass -File `"$($MyInvocation.MyCommand.Path)`" -Uninstall" -ForegroundColor Yellow
 }
 
-# Script'i çalıştır
+# Hata yakalama ile sessiz çalıştır
 try {
     Main
 }
 catch {
-    Write-Error "Kritik hata: $_"
-    if (Test-Path $LogFile) {
-        Add-Content -Path $LogFile -Value "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] [FATAL] Kritik hata: $_"
-    }
+    Write-InstallerLog "KRITIK HATA: $_" "ERROR"
+    Write-InstallerLog "Stack Trace: $($_.ScriptStackTrace)" "ERROR"
     exit 1
 }
