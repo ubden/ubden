@@ -3,9 +3,18 @@ $ScriptPath = "C:\ProgramData\Wazuh\Logs\Collect-EmailAndCreds.ps1"
 $TaskName = "Wazuh_Email_Cred_Collector"
 $TimeNow = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 
-# Klasör oluştur
+# Gerekli dizinleri oluştur
 if (-not (Test-Path (Split-Path $LogFile))) {
     New-Item -ItemType Directory -Path (Split-Path $LogFile) -Force | Out-Null
+}
+
+if (-not (Test-Path (Split-Path $ScriptPath))) {
+    New-Item -ItemType Directory -Path (Split-Path $ScriptPath) -Force | Out-Null
+}
+
+# Scripti hedef konuma kopyala (eğer mevcut değilse)
+if (-not (Test-Path $ScriptPath)) {
+    Copy-Item -Path $MyInvocation.MyCommand.Path -Destination $ScriptPath -Force
 }
 
 # Log başlığı
@@ -15,7 +24,6 @@ Add-Content -Path $LogFile -Value "`n[$TimeNow] --- Günlük e-posta ve kimlik b
 try {
     $ProfilesPath = "HKCU:\Software\Microsoft\Office"
     $OfficeVersions = Get-ChildItem $ProfilesPath | Where-Object { $_.Name -match '1[6-9]\.0|[2-9][0-9]\.0' }
-
     foreach ($Version in $OfficeVersions) {
         $ProfileRoot = "$($Version.PSPath)\Outlook\Profiles"
         if (Test-Path $ProfileRoot) {
@@ -38,7 +46,6 @@ try {
     $entries = cmdkey /list
     $blocks = @()
     $currentBlock = @()
-
     foreach ($line in $entries) {
         if ($line -match "^\s*$" -and $currentBlock.Count -gt 0) {
             $blocks += ,@($currentBlock)
@@ -47,15 +54,12 @@ try {
             $currentBlock += $line
         }
     }
-
     if ($currentBlock.Count -gt 0) {
         $blocks += ,@($currentBlock)
     }
-
     foreach ($block in $blocks) {
         $target = $null
         $user = $null
-
         foreach ($line in $block) {
             if ($line -match "Target:\s*(.+)") {
                 $target = $Matches[1].Trim()
@@ -64,7 +68,6 @@ try {
                 $user = $Matches[1].Trim()
             }
         }
-
         if ($target -match "TERMSRV|nas|vpn|rdp|cloud|\d+\.\d+\.\d+\.\d+" -and $user) {
             Add-Content -Path $LogFile -Value "[CREDENTIAL] $target username: $user"
         }
@@ -72,7 +75,6 @@ try {
 } catch {
     Add-Content -Path $LogFile -Value "[ERROR] cmdkey Credential taramasında hata: $_"
 }
-
 
 # 4️⃣ Görev zamanlayıcıya kendini ekle
 try {
