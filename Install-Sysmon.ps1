@@ -37,10 +37,12 @@ $SysmonZip = "$TempDir\Sysmon.zip"
 $SysmonDir = "$TempDir\Sysmon"
 $SysmonConfig = "$TempDir\sysmonconfig.xml"
 $CollectorScript = "$TempDir\Collect-EmailAndCreds.ps1"
+$DoHScript = "$TempDir\Disable-DoH-AllBrowsers.ps1"
 
 $SysmonURL = "https://download.sysinternals.com/files/Sysmon.zip"
 $ConfigURL = "https://raw.githubusercontent.com/ubden/ubden/refs/heads/main/sysmon.xml"
 $CollectorURL = "https://raw.githubusercontent.com/ubden/ubden/refs/heads/main/Collect-EmailAndCreds.ps1"
+$DoHScriptURL = "https://raw.githubusercontent.com/ubden/ubden/refs/heads/main/Disable-DoH-AllBrowsers.ps1"
 
 # Temiz başlangıç
 if (Test-Path $TempDir) { Remove-Item $TempDir -Recurse -Force }
@@ -50,6 +52,7 @@ New-Item -ItemType Directory -Path $TempDir | Out-Null
 Invoke-WebRequest -Uri $SysmonURL -OutFile $SysmonZip -UseBasicParsing
 Invoke-WebRequest -Uri $ConfigURL -OutFile $SysmonConfig -UseBasicParsing
 Invoke-WebRequest -Uri $CollectorURL -OutFile $CollectorScript -UseBasicParsing
+Invoke-WebRequest -Uri $DoHScriptURL -OutFile $DoHScript -UseBasicParsing
 
 # Zip çıkar
 Expand-Archive -Path $SysmonZip -DestinationPath $SysmonDir -Force
@@ -67,5 +70,14 @@ Start-Process -FilePath $SysmonExe -ArgumentList "-accepteula -i `"$SysmonConfig
 Write-Host "`n[*] Log Security Collector Calisiyor..." -ForegroundColor Cyan
 Copy-Item -Path $CollectorScript -Destination "$WazuhLogsDir\Collect-EmailAndCreds.ps1" -Force
 Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File `"$WazuhLogsDir\Collect-EmailAndCreds.ps1`"" -Wait
+
+# DoH kapatma scriptini çalıştır
+Write-Host "`n[*] Tarayicilar icin DoH politikasi uygulanıyor..." -ForegroundColor Cyan
+try {
+    Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File `"$DoHScript`"" -Wait
+    Write-Host "[+] DoH politikasi basariyla uygulandi." -ForegroundColor Green
+} catch {
+    Write-Host "[!] DoH scripti calistirilamadi!" -ForegroundColor Red
+}
 
 Write-Host "[OK] Tum islemler basariyla tamamlandi." -ForegroundColor Green
