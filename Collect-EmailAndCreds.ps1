@@ -16,14 +16,7 @@ if (-not (Test-Path (Split-Path $ScriptPath))) {
 if (-not (Test-Path $ScriptPath)) {
     $ScriptContent = @'
 $LogFile = "C:\ProgramData\Wazuh\Logs\email_cred_log.log"
-$ScriptPath = "C:\ProgramData\Wazuh\Logs\Collect-EmailAndCreds.ps1"
-$TaskName = "Wazuh_Email_Cred_Collector"
 $TimeNow = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-
-# Gerekli dizinleri oluştur
-if (-not (Test-Path (Split-Path $LogFile))) {
-    New-Item -ItemType Directory -Path (Split-Path $LogFile) -Force | Out-Null
-}
 
 # Log başlığı
 Add-Content -Path $LogFile -Value "`n[$TimeNow] --- Günlük e-posta ve kimlik bilgisi taraması başlatıldı ---"
@@ -31,11 +24,11 @@ Add-Content -Path $LogFile -Value "`n[$TimeNow] --- Günlük e-posta ve kimlik b
 # 1️⃣ Outlook POP/IMAP e-posta adresleri
 try {
     $ProfilesPath = "HKCU:\Software\Microsoft\Office"
-    $OfficeVersions = Get-ChildItem $ProfilesPath | Where-Object { $_.Name -match '1[6-9]\.0|[2-9][0-9]\.0' }
+    $OfficeVersions = Get-ChildItem $ProfilesPath -ErrorAction SilentlyContinue | Where-Object { $_.Name -match '1[6-9]\.0|[2-9][0-9]\.0' }
     foreach ($Version in $OfficeVersions) {
         $ProfileRoot = "$($Version.PSPath)\Outlook\Profiles"
         if (Test-Path $ProfileRoot) {
-            Get-ChildItem -Path $ProfileRoot -Recurse | ForEach-Object {
+            Get-ChildItem -Path $ProfileRoot -Recurse -ErrorAction SilentlyContinue | ForEach-Object {
                 $values = Get-ItemProperty -Path $_.PSPath -ErrorAction SilentlyContinue
                 foreach ($prop in $values.PSObject.Properties) {
                     if ($prop.Value -match "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}") {
@@ -51,7 +44,7 @@ try {
 
 # 2️⃣ Credential Manager (cmdkey target + username eşleştirmesi)
 try {
-    $entries = cmdkey /list
+    $entries = cmdkey /list 2>$null
     $blocks = @()
     $currentBlock = @()
     foreach ($line in $entries) {
@@ -89,7 +82,6 @@ Add-Content -Path $LogFile -Value "--- Tarama tamamlandı ---"
 '@
     
     Set-Content -Path $ScriptPath -Value $ScriptContent -Encoding UTF8
-    Add-Content -Path $LogFile -Value "[✓] Script dosyası oluşturuldu: $ScriptPath"
 }
 
 # Log başlığı
@@ -98,11 +90,11 @@ Add-Content -Path $LogFile -Value "`n[$TimeNow] --- Günlük e-posta ve kimlik b
 # 1️⃣ Outlook POP/IMAP e-posta adresleri
 try {
     $ProfilesPath = "HKCU:\Software\Microsoft\Office"
-    $OfficeVersions = Get-ChildItem $ProfilesPath | Where-Object { $_.Name -match '1[6-9]\.0|[2-9][0-9]\.0' }
+    $OfficeVersions = Get-ChildItem $ProfilesPath -ErrorAction SilentlyContinue | Where-Object { $_.Name -match '1[6-9]\.0|[2-9][0-9]\.0' }
     foreach ($Version in $OfficeVersions) {
         $ProfileRoot = "$($Version.PSPath)\Outlook\Profiles"
         if (Test-Path $ProfileRoot) {
-            Get-ChildItem -Path $ProfileRoot -Recurse | ForEach-Object {
+            Get-ChildItem -Path $ProfileRoot -Recurse -ErrorAction SilentlyContinue | ForEach-Object {
                 $values = Get-ItemProperty -Path $_.PSPath -ErrorAction SilentlyContinue
                 foreach ($prop in $values.PSObject.Properties) {
                     if ($prop.Value -match "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}") {
@@ -118,7 +110,7 @@ try {
 
 # 2️⃣ Credential Manager (cmdkey target + username eşleştirmesi)
 try {
-    $entries = cmdkey /list
+    $entries = cmdkey /list 2>$null
     $blocks = @()
     $currentBlock = @()
     foreach ($line in $entries) {
