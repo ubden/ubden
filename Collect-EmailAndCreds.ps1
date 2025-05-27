@@ -3,7 +3,7 @@ $ScriptPath = "C:\ProgramData\Wazuh\Logs\Collect-EmailAndCreds.ps1"
 $TaskName = "Wazuh_Email_Cred_Collector"
 $TimeNow = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 
-# Klasör kontrolü
+# Klasör oluştur
 if (-not (Test-Path (Split-Path $LogFile))) {
     New-Item -ItemType Directory -Path (Split-Path $LogFile) -Force | Out-Null
 }
@@ -33,26 +33,39 @@ try {
     Add-Content -Path $LogFile -Value "[ERROR] Outlook e-posta taramasında hata: $_"
 }
 
-# 2️⃣ Credential Manager
+# 2️⃣ Credential Manager (cmdkey ile temel hedefler)
 try {
     $vaults = cmdkey /list | Select-String "Target" | ForEach-Object {
         $_.ToString().Split(":")[1].Trim()
     }
 
     foreach ($vault in $vaults) {
-        if ($vault -match "\d+\.\d+\.\d+\.\d+" -or $vault -match "nas|term|cloud|vpn|rdp|file|srv|auth|sso|domain|host") {
-            Add-Content -Path $LogFile -Value "[CREDENTIAL] Entry found: $vault"
+        if ($vault -match "\d+\.\d+\.\d+\.\d+" -or $vault -match "nas|term|cloud|vpn|rdp|file|srv|auth|sso|domain|host|TERMSRV") {
+            Add-Content -Path $LogFile -Value "[CREDENTIAL] cmdkey entry: $vault"
         }
     }
 } catch {
-    Add-Content -Path $LogFile -Value "[ERROR] Credential taramasında hata: $_"
+    Add-Content -Path $LogFile -Value "[ERROR] cmdkey Credential taramasında hata: $_"
 }
 
-# 3️⃣ Görev zamanlayıcıya kendini ekle
+# 3️⃣ Credential Registry (TERMSRV/RDP gibi kayıtları registry'den al)
+try {
+    $RegPaths = Get-ChildItem -Path "HKCU:\Software\Microsoft\CredUI\CredPersisted" -ErrorAction SilentlyContinue
+    foreach ($item in $RegPaths) {
+        $keyName = $item.PSChildName
+        if ($keyName -match "TERMSRV|nas|vpn|cloud|rdp|sso|domain|\d+\.\d+\.\d+\.\d+") {
+            Add-Content -Path $LogFile -Value "[CREDENTIAL-RDP] Saved Key: $keyName"
+        }
+    }
+} catch {
+    Add-Content -Path $LogFile -Value "[ERROR] Registry Credential taramasında hata: $_"
+}
+
+# 4️⃣ Görev zamanlayıcıya kendini ekle
 try {
     $existing = schtasks /Query /TN $TaskName 2>&1 | Out-String
     if ($existing -match "ERROR:") {
-        $action = "powershell.exe -ExecutionPolicy Bypass -File `"$ScriptPath`""
+        $action = 'powershell.exe -ExecutionPolicy Bypass -File "' + $ScriptPath + '"'
         schtasks /Create /SC DAILY /TN $TaskName /TR "$action" /ST 09:00 /RL HIGHEST /F | Out-Null
         Add-Content -Path $LogFile -Value "[✓] Görev zamanlayıcıya eklendi: $TaskName"
     } else {
