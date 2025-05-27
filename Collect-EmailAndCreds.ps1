@@ -47,7 +47,7 @@ function Restart-AsAdmin {
     }
 }
 
-# Sessiz log yazma
+# Sessiz log yazma - UTF-8 BOM ile Türkçe karakter desteği
 function Write-CollectorLog {
     param(
         [string]$Message
@@ -74,7 +74,8 @@ function Write-CollectorLog {
             catch { }
         }
         
-        Add-Content -Path $LogFile -Value $Message -Encoding UTF8 -ErrorAction SilentlyContinue
+        # UTF-8 BOM ile yazma - Türkçe karakter desteği için
+        [System.IO.File]::AppendAllText($LogFile, "$Message`r`n", [System.Text.Encoding]::UTF8)
     }
     catch { }
 }
@@ -92,10 +93,10 @@ function Install-Collector {
                     Remove-Item $ScriptPath -Force -ErrorAction SilentlyContinue
                 }
                 Copy-Item $currentScript $ScriptPath -Force -ErrorAction Stop
-                Write-CollectorLog "[KURULUM] Script kopyalandi: $ScriptPath"
+                Write-CollectorLog "[KURULUM] Script kopyalandı: $ScriptPath"
             }
             catch {
-                Write-CollectorLog "[ERROR] Script kopyalanamadi: $_"
+                Write-CollectorLog "[ERROR] Script kopyalanamadı: $_"
                 return $false
             }
         }
@@ -113,17 +114,17 @@ function Install-Collector {
                 $task = New-ScheduledTask -Action $action -Trigger $trigger -Principal $principal -Settings $settings -Description "Wazuh Email and Credential Monitoring"
                 
                 Register-ScheduledTask -TaskName $TaskName -InputObject $task -Force | Out-Null
-                Write-CollectorLog "[KURULUM] Zamanlanmis gorev olusturuldu: $TaskName"
+                Write-CollectorLog "[KURULUM] Zamanlanmış görev oluşturuldu: $TaskName"
             } else {
-                Write-CollectorLog "[KURULUM] Zamanlanmis gorev zaten mevcut: $TaskName"
+                Write-CollectorLog "[KURULUM] Zamanlanmış görev zaten mevcut: $TaskName"
             }
         }
         catch {
-            Write-CollectorLog "[ERROR] Scheduled task olusturulamadi: $_"
+            Write-CollectorLog "[ERROR] Scheduled task oluşturulamadı: $_"
             return $false
         }
         
-        Write-CollectorLog "[KURULUM] Kurulum sessizce tamamlandi"
+        Write-CollectorLog "[KURULUM] Kurulum sessizce tamamlandı"
         return $true
     }
     catch {
@@ -135,22 +136,22 @@ function Install-Collector {
 # Sessiz kaldırma işlemi
 function Uninstall-Collector {
     try {
-        Write-CollectorLog "[KALDIRMA] Collector sessizce kaldiriliyor..."
+        Write-CollectorLog "[KALDIRMA] Collector sessizce kaldırılıyor..."
         
         # Scheduled task kaldır
         $existingTask = Get-ScheduledTask -TaskName $TaskName -ErrorAction SilentlyContinue
         if ($existingTask) {
             Unregister-ScheduledTask -TaskName $TaskName -Confirm:$false -ErrorAction SilentlyContinue
-            Write-CollectorLog "[KALDIRMA] Zamanlanmis gorev kaldirild: $TaskName"
+            Write-CollectorLog "[KALDIRMA] Zamanlanmış görev kaldırıldı: $TaskName"
         }
         
         # Script dosyasını sil
         if (Test-Path $ScriptPath) {
             Remove-Item $ScriptPath -Force -ErrorAction SilentlyContinue
-            Write-CollectorLog "[KALDIRMA] Script dosyasi silindi: $ScriptPath"
+            Write-CollectorLog "[KALDIRMA] Script dosyası silindi: $ScriptPath"
         }
         
-        Write-CollectorLog "[KALDIRMA] Kaldirma sessizce tamamlandi"
+        Write-CollectorLog "[KALDIRMA] Kaldırma sessizce tamamlandı"
         return $true
     }
     catch {
@@ -176,6 +177,7 @@ function Start-EmailCredentialScan {
     # 1️⃣ Outlook POP/IMAP e-posta adresleri
     try {
         $emailCount = 0
+        $foundEmails = @()  # Tekrar önleme için
         $ProfilesPath = "HKCU:\Software\Microsoft\Office"
         
         if (Test-Path $ProfilesPath) {
@@ -190,9 +192,19 @@ function Start-EmailCredentialScan {
                             $values = Get-ItemProperty -Path $_.PSPath -ErrorAction SilentlyContinue
                             if ($values) {
                                 foreach ($prop in $values.PSObject.Properties) {
+                                    # E-posta regex match
                                     if ($prop.Value -match "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}") {
-                                        Write-CollectorLog "[POP/IMAP] $($_.PSPath) : $($prop.Value)"
-                                        $emailCount++
+                                        $emailAddress = $Matches[0]
+                                        
+                                        # İmza kontrolü - "imza" kelimesi içeren kayıtları atla
+                                        if ($prop.Value -notmatch "imza|signature") {
+                                            # Tekrar kontrolü
+                                            if ($foundEmails -notcontains $emailAddress) {
+                                                Write-CollectorLog "[POP/IMAP] : $emailAddress"
+                                                $foundEmails += $emailAddress
+                                                $emailCount++
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -212,6 +224,7 @@ function Start-EmailCredentialScan {
     # 2️⃣ Credential Manager tarama
     try {
         $credCount = 0
+        $foundCreds = @()  # Tekrar önleme için
         $entries = cmdkey /list 2>&1
         
         if ($LASTEXITCODE -eq 0 -or $entries) {
@@ -244,10 +257,18 @@ function Start-EmailCredentialScan {
                     }
                 }
                 
-                # Şüpheli hedefler
+                # Şüpheli hedefler (RDP, VPN, NAS, cloud servisler, IP adresleri)
                 if ($target -and $user -and ($target -match "TERMSRV|nas|vpn|rdp|cloud|\d+\.\d+\.\d+\.\d+")) {
-                    Write-CollectorLog "[CREDENTIAL] $target username: $user"
-                    $credCount++
+                    $credEntry = "$target | $user"
+                    
+                    # Tekrar kontrolü
+                    if ($foundCreds -notcontains $credEntry) {
+                        # Target'ı temizle - "Domain:target=" kısmını kaldır
+                        $cleanTarget = $target -replace "^Domain:target=", ""
+                        Write-CollectorLog "[CREDENTIAL] $cleanTarget : $user"
+                        $foundCreds += $credEntry
+                        $credCount++
+                    }
                 }
             }
         }
@@ -285,7 +306,7 @@ function Main {
             Restart-AsAdmin
         }
         
-        Write-CollectorLog "=== WAZUH COLLECTOR SESSIZ BASLADI ==="
+        Write-CollectorLog "=== WAZUH COLLECTOR SESSIZ BAŞLADI ==="
         
         # Kurulum yap
         $installResult = Install-Collector
