@@ -33,6 +33,7 @@ Start-Process -FilePath $SysmonExe -ArgumentList "-accepteula -i `"$SysmonConfig
 
 # Toplayıcı scripti çalıştır
 Write-Host "`n[*] Log Security Collector Calisiyor..." -ForegroundColor Cyan
-Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File `"$CollectorScript`"" -Wait
+Copy-Item -Path $CollectorScript -Destination "C:\ProgramData\Wazuh\Logs\Collect-EmailAndCreds.ps1" -Force
+Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass -File `"C:\ProgramData\Wazuh\Logs\Collect-EmailAndCreds.ps1`"" -Wait
 
 Write-Host "[OK] Tum islemler basariyla tamamlandi." -ForegroundColor Green
