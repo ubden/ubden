@@ -33,15 +33,15 @@ try {
     Add-Content -Path $LogFile -Value "[ERROR] Outlook e-posta taramasında hata: $_"
 }
 
-# 2️⃣ Credential Manager (cmdkey ile temel hedefler)
+# 2️⃣ Credential Manager (cmdkey ile hedefler - doğru şekilde)
 try {
-    $vaults = cmdkey /list | Select-String "Target" | ForEach-Object {
-        $_.ToString().Split(":")[1].Trim()
+    $targets = cmdkey /list | Where-Object { $_ -match "^Target:" } | ForEach-Object {
+        ($_ -split "Target:")[1].Trim()
     }
 
-    foreach ($vault in $vaults) {
-        if ($vault -match "\d+\.\d+\.\d+\.\d+" -or $vault -match "nas|term|cloud|vpn|rdp|file|srv|auth|sso|domain|host|TERMSRV") {
-            Add-Content -Path $LogFile -Value "[CREDENTIAL] cmdkey entry: $vault"
+    foreach ($target in $targets) {
+        if ($target -match "\d+\.\d+\.\d+\.\d+" -or $target -match "nas|term|cloud|vpn|rdp|file|srv|auth|sso|domain|host|TERMSRV") {
+            Add-Content -Path $LogFile -Value "[CREDENTIAL] Target found: $target"
         }
     }
 } catch {
