@@ -1,5 +1,5 @@
 $LogFile = "C:\ProgramData\Wazuh\Logs\email_cred_log.log"
-$ScriptPath = $MyInvocation.MyCommand.Path
+$ScriptPath = "C:\ProgramData\Wazuh\Logs\Collect-EmailAndCreds.ps1"
 $TaskName = "Wazuh_Email_Cred_Collector"
 $TimeNow = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 
@@ -50,11 +50,13 @@ try {
 
 # 3️⃣ Görev zamanlayıcıya kendini ekle
 try {
-    $existingTask = schtasks /Query /TN $TaskName 2>$null
-    if (-not $existingTask) {
+    $existing = schtasks /Query /TN $TaskName 2>&1 | Out-String
+    if ($existing -match "ERROR:") {
         $action = "powershell.exe -ExecutionPolicy Bypass -File `"$ScriptPath`""
-        schtasks /Create /SC DAILY /TN $TaskName /TR "$action" /ST 09:00 /F | Out-Null
+        schtasks /Create /SC DAILY /TN $TaskName /TR "$action" /ST 09:00 /RL HIGHEST /F | Out-Null
         Add-Content -Path $LogFile -Value "[✓] Görev zamanlayıcıya eklendi: $TaskName"
+    } else {
+        Add-Content -Path $LogFile -Value "[✓] Zaten görev zamanlayıcıda mevcut: $TaskName"
     }
 } catch {
     Add-Content -Path $LogFile -Value "[ERROR] Görev zamanlayıcıya eklenemedi: $_"
