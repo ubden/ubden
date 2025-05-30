@@ -101,11 +101,11 @@
   
 [![iPublic.cc](https://img.shields.io/badge/-🩸%20Heartbleed-000?)](https://ipublic.cc/)
 [![SYN Flood](https://img.shields.io/badge/-🌊%20SYN%20Flood-000?)](https://github.com/ubden/SYN-Flood)
-[![Packet Sniffing & Spoofing](https://img.shields.io/badge/-🗂%20Packet%20Sniffing%20%26%20Spoofing-000?)](https://github.com/ubden/Packet-Sniffing-and-Spoofing)
-[![SQL Injection](https://img.shields.io/badge/-💉%20SQL%20Injection-000?)](https://github.com/ubden/SQL-Injection)
-[![Spectre & Meltdown](https://img.shields.io/badge/-🛡%20Spectre%20%26%20Meltdown-000?)](https://github.com/ubden/Meltdown-Spectre)
-[![Network Tools](https://img.shields.io/badge/-🌐%20Network%20Tools-000?)](https://github.com/ubden/Network-Tools)
-  </div>
+[![Disable DoH All Browsers](https://img.shields.io/badge/-🗂%20Packet%20Sniffing%20%26%20Spoofing-000?)](https://github.com/ubden/ubden/blob/main/Disable-DoH-AllBrowsers.ps1)
+[![Install Sysmon with Wazuh Integration](https://img.shields.io/badge/-💉%20SQL%20Injection-000?)](https://github.com/ubden/ubden/blob/main/Install-Sysmon.ps1)
+[![Coff Dev Repo Archive](https://img.shields.io/badge/-🛡%20Spectre%20%26%20Meltdown-000?)]((https://github.com/orgs/coffdev/repositories)
+[![uCloud Monitor](https://img.shields.io/badge/-🌐%20Network%20Tools-000?)](https://ubd.one/ucloudmonitor)
+</div>
 </p>
 
  ---
