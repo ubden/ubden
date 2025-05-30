@@ -27,9 +27,7 @@ const ubdenCorp = {
     },
     mission: "Innovation Through Technology",
     focus: ["Enterprise Solutions", "Cloud Infrastructure", "Cybersecurity"],
-    currentProjects: ["AI Integration", "Blockchain Solutions", "IoT Platforms"],
     philosophy: "Code with precision, innovate with purpose",
-    teamSize: "6+ Expert Developers",
     established: "Global Technology Solutions Provider"
 };
 ```
