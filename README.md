@@ -57,8 +57,8 @@ const ubdenCorp = {
 
 <div align="center">
 
-| Role | Team Member | Expertise | Profile |
-|------|-------------|-----------|---------|
+| Role | Team Member | Expertise |
+|------|-------------|-----------|
 | 📊 **Project Manager**  | Strategic Planning & Team Leadership | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ck-cankurt) |
 | 🚀 **Software Engineer** | Full Stack Development & Architecture | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kemalincekara) |
 | 📱 **Senior Developer**  | Mobile App & AI Solutions | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CanerDedeoglu) |
