@@ -59,14 +59,14 @@ const ubdenCorp = {
 
 | Role | Team Member | Expertise | Profile |
 |------|-------------|-----------|---------|
-| 📊 **Project Manager** | Can K. | Strategic Planning & Team Leadership | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ck-cankurt) |
-| 🚀 **Software Engineer** | Kemal I. | Full Stack Development & Architecture | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kemalincekara) |
-| 📱 **Senior Developer** | Caner D. | Mobile App & AI Solutions | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CanerDedeoglu) |
-| 🛡️ **Security Engineer** | Kaan D. | Cyber Security & SOC Analyst | [![Security](https://img.shields.io/badge/Security-E53E3E?style=for-the-badge&logo=security&logoColor=white)](https://ubden.com) |
-| 🎨 **Frontend Developer** | Ruslan B. | UI/UX & Modern Frontend Solutions | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ruslancik) |
-| 🔧 **PHP Developer** | Dogukan K. | Backend Development & API Design | [![Backend](https://img.shields.io/badge/Backend-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://ubden.com) |
-| 🏗️ **Technical Senior** | Mahmut O. | System Architecture & Technical Leadership | [![Architecture](https://img.shields.io/badge/Architecture-0066CC?style=for-the-badge&logo=blueprint&logoColor=white)](https://ubden.com) |
-| ⚙️ **Technical Senior** | Cengiz A. | System Architecture & DevOps Leadership | [![DevOps](https://img.shields.io/badge/DevOps-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://ubden.com) |
+| 📊 **Project Manager**  | Strategic Planning & Team Leadership | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ck-cankurt) |
+| 🚀 **Software Engineer** | Full Stack Development & Architecture | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kemalincekara) |
+| 📱 **Senior Developer**  | Mobile App & AI Solutions | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CanerDedeoglu) |
+| 🛡️ **Security Engineer** | Cyber Security & SOC Analyst | [![Security](https://img.shields.io/badge/Security-E53E3E?style=for-the-badge&logo=security&logoColor=white)](https://ubden.com) |
+| 🎨 **Frontend Developer** | UI/UX & Modern Frontend Solutions | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ruslancik) |
+| 🔧 **PHP Developer** | Backend Development & API Design | [![Backend](https://img.shields.io/badge/Backend-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://ubden.com) |
+| 🏗️ **Technical Senior** | System Architecture & Technical Leadership | [![Architecture](https://img.shields.io/badge/Architecture-0066CC?style=for-the-badge&logo=blueprint&logoColor=white)](https://ubden.com) |
+| ⚙️ **Technical Senior** | System Architecture & DevOps Leadership | [![DevOps](https://img.shields.io/badge/DevOps-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://ubden.com) |
 
 </div>
 
