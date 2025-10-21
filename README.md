@@ -175,11 +175,11 @@ const ubdenCorp = {
 </td>
 <td align="center" width="50%">
 
-**📊 Point2Point IT**
+**📊 Community**
 <br>
-[![Platform](https://img.shields.io/badge/Platform-9C27B0?style=for-the-badge&logo=web&logoColor=white)](https://www.ubden.com.tr)
+[![Platform](https://img.shields.io/badge/Platform-9C27B0?style=for-the-badge&logo=web&logoColor=white)](https://forum.ubden.com.tr)
 <br>
-*Enterprise IT Soluiton & Security Consultant*
+*Ubden® Community Platform +10.000 Member !*
 
 </td>
 </tr>
