@@ -166,20 +166,20 @@ const ubdenCorp = {
 <tr>
 <td align="center" width="50%">
 
-**🤖 ResteChef AI**
+**🤖 ERPx**
 <br>
-[![Play Store](https://img.shields.io/badge/Play%20Store-4CAF50?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.restechef.app)
+[![Play Store](https://img.shields.io/badge/Play%20Store-4CAF50?style=for-the-badge&logo=google-play&logoColor=white)](https://erpx.1vs.co)
 <br>
-*AI-powered restaurant management solution*
+*Multi-Entegrated Advanced ERP Solution*
 
 </td>
 <td align="center" width="50%">
 
-**📊 iPublic.cc**
+**📊 Point2Point IT**
 <br>
-[![Platform](https://img.shields.io/badge/Platform-9C27B0?style=for-the-badge&logo=web&logoColor=white)](https://ipublic.cc)
+[![Platform](https://img.shields.io/badge/Platform-9C27B0?style=for-the-badge&logo=web&logoColor=white)](https://www.ubden.com.tr)
 <br>
-*Enterprise Infrastructure Management Platform*
+*Enterprise IT Soluiton & Security Consultant*
 
 </td>
 </tr>
@@ -225,20 +225,20 @@ const ubdenCorp = {
 <tr>
 <td align="center" width="33%">
 
-**🔍 Security Research**
+**🔍 iPublic.cc**
 <br>
 [![Research](https://img.shields.io/badge/Research%20Tools-E91E63?style=for-the-badge&logo=security&logoColor=white)](https://ipublic.cc/)
 <br>
-*Cybersecurity assessment tools*
+*Enterprise Infrastructure Management Platform*
 
 </td>
 <td align="center" width="33%">
 
-**🌊 Network Tools**
+**🌊 One Virtual Services**
 <br>
-[![GitHub](https://img.shields.io/badge/Open%20Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ubden/SYN-Flood)
+[![GitHub](https://img.shields.io/badge/Open%20Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://1vs.co)
 <br>
-*Network testing utilities*
+*Virtual Services Provider*
 
 </td>
 <td align="center" width="33%">
