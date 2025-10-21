@@ -175,11 +175,11 @@ const ubdenCorp = {
 </td>
 <td align="center" width="50%">
 
-**📊 Sroject Management**
+**📊 iPublic.cc**
 <br>
-[![Platform](https://img.shields.io/badge/Platform-9C27B0?style=for-the-badge&logo=web&logoColor=white)](https://sroject.ruy.app)
+[![Platform](https://img.shields.io/badge/Platform-9C27B0?style=for-the-badge&logo=web&logoColor=white)](https://ipublic.cc)
 <br>
-*Advanced project management platform*
+*Enterprise Infrastructure Management Platform*
 
 </td>
 </tr>
