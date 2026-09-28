@@ -1,376 +1,537 @@
-# ✨ Welcome to Ubden® Development Team's Universe
+<!--
+UBDEN® / ORGANIZATION PROFILE
+GitHub path: .github/profile/README.md
+
+Logo: GitHub organizasyon avatarı (github.com/ubdencom.png)
+Motion: Harici SVG görselleri. GitHub README içinde özel CSS ve JavaScript çalıştırmaz.
+-->
 
 <div align="center">
-  
-  ![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&duration=4000&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&width=700&height=120&lines=Ubden®+Development+Team;Full+Stack+Innovation;Cloud+Architecture+Solutions;Cybersecurity+Research;Building+Tomorrow's+Technology)
+
+<img
+  src="https://capsule-render.vercel.app/api?type=waving&color=0:050B16,45:103457,75:146889,100:050B16&height=215&section=header&text=THE%20FUTURE%20IS%20A%20BUILD%20PROCESS&fontSize=27&fontColor=FFFFFF&fontAlignY=38&desc=UBDEN%C2%AE%20%2F%20THE%20CULTURE%20OF%20INNOVATION&descSize=15&descAlignY=60&animation=fadeIn"
+  width="100%"
+  alt="UBDEN — The Future Is a Build Process"
+/>
+
+<br/>
+
+<a href="https://github.com/ubdencom">
+  <img
+    src="https://github.com/ubdencom.png?size=240"
+    width="150"
+    height="150"
+    alt="UBDEN logo"
+  />
+</a>
+
+<br/><br/>
+
+# U B D E N ®
+
+### THE CULTURE OF INNOVATION
+
+<img
+  src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=600&size=19&duration=2500&pause=650&color=68E1FD&center=true&vCenter=true&repeat=true&width=850&height=55&lines=We+imagine+what+could+exist.;We+engineer+what+should+exist.;We+share+what+we+discover."
+  alt="We imagine, engineer, and share."
+/>
+
+<br/>
+
+<a href="https://ubden.com">
+  <img src="https://img.shields.io/badge/01-EXPLORE_UBDEN-68E1FD?style=for-the-badge&labelColor=081422" alt="Explore Ubden" />
+</a>
+<a href="https://github.com/ubdencom?tab=repositories">
+  <img src="https://img.shields.io/badge/02-EXPLORE_THE_CODE-B498FF?style=for-the-badge&labelColor=081422" alt="Explore repositories" />
+</a>
+<a href="mailto:info@ubden.com">
+  <img src="https://img.shields.io/badge/03-START_A_CONVERSATION-FFFFFF?style=for-the-badge&labelColor=081422" alt="Contact Ubden" />
+</a>
+
+<br/><br/>
+
+`OPEN SOURCE` &nbsp; `SOFTWARE` &nbsp; `AI` &nbsp; `AUTOMATION` &nbsp; `CYBERSECURITY`
+
+<br/>
+
+**↓ SCROLL TO ENTER THE UBDEN UNIVERSE ↓**
 
 </div>
 
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=100&section=header&text=&fontSize=0" width="100%"/>
-</div>
+<br/><br/>
 
----
-
-## 🏢 About Ubden® Corporation
-
-<img align="right" alt="Coding" width="400" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif">
-
-```typescript
-const ubdenCorp = {
-    name: "Ubden® Development Team",
-    type: "Corporate Development Division",
-    regions: {
-        turkeyBalkans: "Ubden® Teknoloji Anonim Şirketi",
-        usa: "Ubden® LLC", 
-        europe: "Ubden® OU"
-    },
-    mission: "Innovation Through Technology",
-    focus: ["Enterprise Solutions", "Cloud Infrastructure", "Cybersecurity"],
-    philosophy: "Code with precision, innovate with purpose",
-    established: "Global Technology Solutions Provider"
-};
-```
-
-<br clear="right"/>
-
----
-
-## 🌐 Connect With Ubden®
+<!-- ═══════════════════════ SCENE 01 ═══════════════════════ -->
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0077B5)](https://www.linkedin.com/company/ubden)
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ubden)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/ubden)
-[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/ubden)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/ubden)
-[![HackerRank](https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white)](https://www.hackerrank.com/ubden)
+<img
+  src="https://capsule-render.vercel.app/api?type=rect&color=0:081422,50:164B6C,100:081422&height=75&section=header&text=01%20%2F%20THE%20ORIGIN&fontSize=22&fontColor=FFFFFF&animation=fadeIn"
+  width="100%"
+  alt="Scene 01 — The Origin"
+/>
 
-![Profile Views](https://komarev.com/ghpvc/?username=ubden&label=Profile%20Views&color=00D9FF&style=for-the-badge)
+<br/>
+
+### EVERY SYSTEM BEGINS WITH A QUESTION.
+
+*What if we could make it better?*
 
 </div>
 
----
+<br/>
 
-## 👥 Ubden® Development Team
+> **UBDEN® is where curiosity becomes engineering.**
+>
+> We create modern software, explore artificial intelligence and automation, contribute to open source, and build tools that help people do more with technology.
+
+We believe good technology should have three qualities: **a clear purpose, thoughtful execution, and room for others to build upon it.**
 
 <div align="center">
 
-| Role | Expertise | Team Member |
-|------|-------------|-----------|
-| 📊 **Project Manager**  | Strategic Planning & Team Leadership | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ck-cankurt) |
-| 🚀 **Software Engineer** | Full Stack Development & Architecture | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kemalincekara) |
-| 📱 **Senior Developer**  | Mobile App & AI Solutions | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CanerDedeoglu) |
-| 🛡️ **Security Engineer** | Cyber Security & SOC Analyst | [![Security](https://img.shields.io/badge/Security-E53E3E?style=for-the-badge&logo=security&logoColor=white)](https://ubden.com) |
-| 🎨 **Frontend Developer** | UI/UX & Modern Frontend Solutions | [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ruslancik) |
-| 🔧 **PHP Developer** | Backend Development & API Design | [![Backend](https://img.shields.io/badge/Backend-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://ubden.com) |
-| 🏗️ **Technical Senior** | System Architecture & Technical Leadership | [![Architecture](https://img.shields.io/badge/Architecture-0066CC?style=for-the-badge&logo=blueprint&logoColor=white)](https://ubden.com) |
-| ⚙️ **Technical Senior** | System Architecture & DevOps Leadership | [![DevOps](https://img.shields.io/badge/DevOps-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://ubden.com) |
+<img
+  src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=500&size=17&duration=2100&pause=850&color=B498FF&center=true&vCenter=true&repeat=true&width=820&height=45&lines=CURIOSITY+%E2%86%92+EXPERIMENT;EXPERIMENT+%E2%86%92+ENGINEERING;ENGINEERING+%E2%86%92+IMPACT"
+  alt="Curiosity to experiment. Experiment to engineering. Engineering to impact."
+/>
 
 </div>
 
----
+<br/><br/>
 
-## 🛠️ Ubden® Tech Stack
+<!-- ═══════════════════════ SCENE 02 ═══════════════════════ -->
 
-### 💻 Programming Languages
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black)
-![Swift](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+<img
+  src="https://capsule-render.vercel.app/api?type=rect&color=0:081422,35:164B6C,70:55478C,100:081422&height=80&section=header&text=02%20%2F%20WHAT%20WE%20BUILD&fontSize=23&fontColor=FFFFFF&animation=fadeIn"
+  width="100%"
+  alt="Scene 02 — What We Build"
+/>
+
+<br/>
+
+### SIX FIELDS. ONE ENGINEERING CULTURE.
+
+<img
+  src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=600&size=17&duration=1900&pause=650&color=68E1FD&center=true&vCenter=true&repeat=true&width=850&height=52&lines=DESIGN+THE+EXPERIENCE.;TRAIN+THE+INTELLIGENCE.;SECURE+THE+SYSTEM.;AUTOMATE+THE+FUTURE."
+  alt="Design the experience. Train the intelligence. Secure the system. Automate the future."
+/>
+
+<br/>
+
+<img src="https://img.shields.io/badge/01-DIGITAL_PRODUCTS-68E1FD?style=flat-square&labelColor=081422" alt="Digital Products" />
+<img src="https://img.shields.io/badge/02-AI_%26_MACHINE_LEARNING-B498FF?style=flat-square&labelColor=081422" alt="AI and Machine Learning" />
+<img src="https://img.shields.io/badge/03-CYBERSECURITY-68E1FD?style=flat-square&labelColor=081422" alt="Cybersecurity" />
+<img src="https://img.shields.io/badge/04-AUTOMATION-B498FF?style=flat-square&labelColor=081422" alt="Automation" />
+<img src="https://img.shields.io/badge/05-DATA_SYSTEMS-68E1FD?style=flat-square&labelColor=081422" alt="Data Systems" />
+<img src="https://img.shields.io/badge/06-OPEN_SOURCE-B498FF?style=flat-square&labelColor=081422" alt="Open Source" />
+
+<br/><br/>
 
 </div>
 
-### 🚀 Frameworks & Libraries
-<div align="center">
-
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![Spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D)
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
-
-</div>
-
-### ☁️ Cloud & DevOps
-<div align="center">
-
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-623CE4?style=for-the-badge&logo=terraform&logoColor=white)
-
-</div>
-
-### 🛢️ Databases
-<div align="center">
-
-![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
-
-</div>
-
-### 🛠️ Development Tools
-<div align="center">
-
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
-
-</div>
-
----
-
-## 🎯 Ubden® Featured Projects
-
-<div align="center">
-
-### 🌐 **Enterprise Applications**
-
-<table>
-<tr>
-<td align="center" width="50%">
-
-**🏢 Ubden® Corporate Platform**
-<br>
-[![Website](https://img.shields.io/badge/Live%20Platform-00D9FF?style=for-the-badge&logo=google-chrome&logoColor=white)](https://www.ubden.com)
-<br>
-*Enterprise-grade corporate management system*
-
-</td>
-<td align="center" width="50%">
-
-**⚡ Coff.dev Framework**
-<br>
-[![Framework](https://img.shields.io/badge/Framework-FF6B6B?style=for-the-badge&logo=php&logoColor=white)](https://coff.dev/)
-<br>
-*Custom PHP framework for enterprise development*
-
-</td>
-</tr>
-<tr>
-<td align="center" width="50%">
-
-**🤖 ERPx**
-<br>
-[![Play Store](https://img.shields.io/badge/Play%20Store-4CAF50?style=for-the-badge&logo=google-play&logoColor=white)](https://erpx.1vs.co)
-<br>
-*Multi-Entegrated Advanced ERP Solution*
-
-</td>
-<td align="center" width="50%">
-
-**📊 Community**
-<br>
-[![Platform](https://img.shields.io/badge/Platform-9C27B0?style=for-the-badge&logo=web&logoColor=white)](https://forum.ubden.com.tr)
-<br>
-*Ubden® Community Platform +10.000 Member !*
-
-</td>
-</tr>
+<table width="100%">
+  <tr>
+    <td align="center" valign="top" width="50%">
+      <br/>
+      <img
+        src="https://api.iconify.design/mdi/monitor-cellphone.svg?color=%2368e1fd&width=78&height=78"
+        width="78"
+        height="78"
+        alt="Web and mobile products"
+      />
+      <br/><br/>
+      <strong>01 / DIGITAL PRODUCTS</strong>
+      <br/><br/>
+      <sub>WEB · MOBILE · PRODUCT EXPERIENCE</sub>
+      <br/><br/>
+      <p>
+        Interfaces and applications built to make complex work feel clear,
+        fast, and intuitive.
+      </p>
+      <p>
+        <code>Web applications</code> · <code>Mobile experiences</code><br/>
+        <code>API integrations</code> · <code>Product interfaces</code>
+      </p>
+      <sub>REACT · VUE · NODE.JS</sub>
+      <br/><br/>
+    </td>
+    <td align="center" valign="top" width="50%">
+      <br/>
+      <img
+        src="https://api.iconify.design/mdi/brain.svg?color=%23b498ff&width=78&height=78"
+        width="78"
+        height="78"
+        alt="Artificial intelligence and machine learning"
+      />
+      <br/><br/>
+      <strong>02 / AI & MACHINE LEARNING</strong>
+      <br/><br/>
+      <sub>MODELS · AGENTS · INTELLIGENT WORKFLOWS</sub>
+      <br/><br/>
+      <p>
+        AI systems that turn data into useful predictions, automate reasoning
+        steps, and support better decisions.
+      </p>
+      <p>
+        <code>LLM integrations</code> · <code>AI agents</code><br/>
+        <code>Machine learning</code> · <code>Model evaluation</code>
+      </p>
+      <sub>PYTHON · TENSORFLOW · OPENAI</sub>
+      <br/><br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" width="50%">
+      <br/>
+      <img
+        src="https://api.iconify.design/mdi/shield-search.svg?color=%23b498ff&width=78&height=78"
+        width="78"
+        height="78"
+        alt="Cybersecurity research"
+      />
+      <br/><br/>
+      <strong>03 / CYBERSECURITY & BUG BOUNTY</strong>
+      <br/><br/>
+      <sub>DISCOVER · VALIDATE · DEFEND</sub>
+      <br/><br/>
+      <p>
+        Authorized security testing and vulnerability research focused on
+        finding weaknesses and making systems more resilient.
+      </p>
+      <p>
+        <code>Penetration testing</code> · <code>Bug bounty</code><br/>
+        <code>Attack surface analysis</code> · <code>Security reporting</code>
+      </p>
+      <sub>WEB SECURITY · NETWORK SECURITY · RESPONSIBLE DISCLOSURE</sub>
+      <br/><br/>
+    </td>
+    <td align="center" valign="top" width="50%">
+      <br/>
+      <img
+        src="https://api.iconify.design/mdi/cog-sync-outline.svg?color=%2368e1fd&width=78&height=78"
+        width="78"
+        height="78"
+        alt="Automation and DevOps"
+      />
+      <br/><br/>
+      <strong>04 / AUTOMATION & DEVOPS</strong>
+      <br/><br/>
+      <sub>BUILD · DEPLOY · OPERATE</sub>
+      <br/><br/>
+      <p>
+        Repeatable workflows and dependable infrastructure that help teams
+        deliver and operate software with confidence.
+      </p>
+      <p>
+        <code>Workflow automation</code> · <code>CI/CD</code><br/>
+        <code>Containers</code> · <code>Infrastructure operations</code>
+      </p>
+      <sub>DOCKER · KUBERNETES · GITHUB ACTIONS</sub>
+      <br/><br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" width="50%">
+      <br/>
+      <img
+        src="https://api.iconify.design/mdi/database-search-outline.svg?color=%2368e1fd&width=78&height=78"
+        width="78"
+        height="78"
+        alt="Data systems"
+      />
+      <br/><br/>
+      <strong>05 / DATA SYSTEMS</strong>
+      <br/><br/>
+      <sub>COLLECT · STRUCTURE · UNDERSTAND</sub>
+      <br/><br/>
+      <p>
+        Data pipelines and storage systems that make information accessible,
+        reliable, and ready for meaningful use.
+      </p>
+      <p>
+        <code>Data processing</code> · <code>Integrations</code><br/>
+        <code>Analytics</code> · <code>Database architecture</code>
+      </p>
+      <sub>SQL · NOSQL · PYTHON</sub>
+      <br/><br/>
+    </td>
+    <td align="center" valign="top" width="50%">
+      <br/>
+      <img
+        src="https://api.iconify.design/mdi/source-branch.svg?color=%23b498ff&width=78&height=78"
+        width="78"
+        height="78"
+        alt="Open-source collaboration"
+      />
+      <br/><br/>
+      <strong>06 / OPEN SOURCE</strong>
+      <br/><br/>
+      <sub>SHARE · COLLABORATE · IMPROVE</sub>
+      <br/><br/>
+      <p>
+        Useful tools, shared knowledge, and contributions that give other
+        builders a stronger starting point.
+      </p>
+      <p>
+        <code>Developer tools</code> · <code>Documentation</code><br/>
+        <code>Community projects</code> · <code>Collaboration</code>
+      </p>
+      <sub>CODE IS BETTER WHEN IDEAS CAN TRAVEL</sub>
+      <br/><br/>
+    </td>
+  </tr>
 </table>
 
-### 💳 **Fintech & Utilities**
+<div align="center">
 
-<table>
-<tr>
-<td align="center" width="33%">
+<br/>
 
-**💰 Iyzico Integration**
-<br>
-[![Payment](https://img.shields.io/badge/Payment%20Gateway-00BCD4?style=for-the-badge&logo=stripe&logoColor=white)](https://pay.ubd.one)
-<br>
-*Secure payment processing system*
+### THE TOOLBOX
 
-</td>
-<td align="center" width="33%">
+<img
+  src="https://skillicons.dev/icons?i=react,vue,nodejs,python,tensorflow,docker,kubernetes,git,linux&theme=dark"
+  alt="React, Vue, Node.js, Python, TensorFlow, Docker, Kubernetes, Git and Linux"
+  width="620"
+/>
 
-**🔗 UBD.one Shortener**
-<br>
-[![URL Service](https://img.shields.io/badge/URL%20Service-FF9800?style=for-the-badge&logo=link&logoColor=white)](https://ubd.one/)
-<br>
-*Enterprise link management*
+<br/><br/>
 
-</td>
-<td align="center" width="33%">
+<img
+  src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=500&size=16&duration=2400&pause=900&color=B498FF&center=true&vCenter=true&repeat=true&width=850&height=46&lines=FROM+THE+FIRST+IDEA+TO+THE+WORKING+SYSTEM.;FROM+THE+DISCOVERED+WEAKNESS+TO+THE+STRONGER+DEFENSE."
+  alt="From idea to working system. From weakness to stronger defense."
+/>
 
-**📱 Ruy.app Library**
-<br>
-[![App Library](https://img.shields.io/badge/App%20Library-607D8B?style=for-the-badge&logo=google-play&logoColor=white)](https://ruy.app)
-<br>
-*Mobile application ecosystem*
+<br/>
 
-</td>
-</tr>
+[![Explore our repositories](https://img.shields.io/badge/%E2%86%92_EXPLORE_WHAT_WE_BUILD-68E1FD?style=for-the-badge&labelColor=081422)](https://github.com/ubdencom?tab=repositories)
+
+</div>
+
+<!-- ═══════════════════════ SCENE 03 ═══════════════════════ -->
+
+<div align="center">
+
+<img
+  src="https://capsule-render.vercel.app/api?type=rect&color=0:081422,50:514A8E,100:081422&height=75&section=header&text=03%20%2F%20THE%20CREW&fontSize=22&fontColor=FFFFFF&animation=fadeIn"
+  width="100%"
+  alt="Scene 03 — The Crew"
+/>
+
+<br/>
+
+### SIX DISCIPLINES. ONE DIRECTION.
+
+<sub>SELECT A ROLE TO MEET THE PERSON BEHIND IT</sub>
+
+<br/><br/>
+
+</div>
+
+<table width="100%">
+  <tr>
+    <td align="center" valign="top" width="33%">
+      <br/>
+      <a href="https://github.com/ck-cankurt/ck-cankurt" title="Can Kurt">
+        <img src="https://api.iconify.design/mdi/compass-outline.svg?color=%2368e1fd&width=88&height=88" width="88" height="88" alt="Project management emblem" />
+        <br/><br/>
+        <strong>PROJECT<br/>MANAGEMENT</strong>
+      </a>
+      <br/><br/>
+      <sub>STRATEGY · COORDINATION</sub>
+      <br/><br/>
+    </td>
+    <td align="center" valign="top" width="33%">
+      <br/>
+      <a href="https://github.com/kemalincekara" title="Kemal İncekara">
+        <img src="https://api.iconify.design/mdi/server-network.svg?color=%23b498ff&width=88&height=88" width="88" height="88" alt="Backend development emblem" />
+        <br/><br/>
+        <strong>BACKEND<br/>DEVELOPMENT</strong>
+      </a>
+      <br/><br/>
+      <sub>ARCHITECTURE · SYSTEMS</sub>
+      <br/><br/>
+    </td>
+    <td align="center" valign="top" width="33%">
+      <br/>
+      <a href="https://github.com/dogukau" title="Doğukan">
+        <img src="https://api.iconify.design/mdi/lightbulb-on-outline.svg?color=%2368e1fd&width=88&height=88" width="88" height="88" alt="Product development emblem" />
+        <br/><br/>
+        <strong>PRODUCT<br/>DEVELOPMENT</strong>
+      </a>
+      <br/><br/>
+      <sub>IDEAS · EXPERIENCES</sub>
+      <br/><br/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" valign="top" width="33%">
+      <br/>
+      <a href="https://github.com/ruslancik" title="Ruslan">
+        <img src="https://api.iconify.design/mdi/animation-play-outline.svg?color=%23b498ff&width=88&height=88" width="88" height="88" alt="Frontend animation emblem" />
+        <br/><br/>
+        <strong>FRONTEND<br/>& MOTION</strong>
+      </a>
+      <br/><br/>
+      <sub>INTERFACES · GSAP</sub>
+      <br/><br/>
+    </td>
+    <td align="center" valign="top" width="33%">
+      <br/>
+      <a href="https://github.com/CanerDedeoglu/CanerDedeoglu" title="Caner Dedeoğlu">
+        <img src="https://api.iconify.design/mdi/code-braces.svg?color=%2368e1fd&width=88&height=88" width="88" height="88" alt="Software engineering emblem" />
+        <br/><br/>
+        <strong>SOFTWARE<br/>ENGINEERING</strong>
+      </a>
+      <br/><br/>
+      <sub>DESIGN · DELIVERY</sub>
+      <br/><br/>
+    </td>
+    <td align="center" valign="top" width="33%">
+      <br/>
+      <a href="https://github.com/dedeoglukaan/dedeoglukaan" title="Kaan Dedeoğlu">
+        <img src="https://api.iconify.design/mdi/shield-lock-outline.svg?color=%23b498ff&width=88&height=88" width="88" height="88" alt="Cybersecurity emblem" />
+        <br/><br/>
+        <strong>CYBER<br/>SECURITY</strong>
+      </a>
+      <br/><br/>
+      <sub>DEFENSE · RESILIENCE</sub>
+      <br/><br/>
+    </td>
+  </tr>
 </table>
 
-### 🛡️ **Security & Research Tools**
+<div align="center">
+  <br/>
+  <sub>◈ THE ROLE IS THE SIGNAL. THE PEOPLE MAKE IT REAL. ◈</sub>
+</div>
 
-<table>
-<tr>
-<td align="center" width="33%">
+<br/><br/>
 
-**🔍 iPublic.cc**
-<br>
-[![Research](https://img.shields.io/badge/Research%20Tools-E91E63?style=for-the-badge&logo=security&logoColor=white)](https://ipublic.cc/)
-<br>
-*Enterprise Infrastructure Management Platform*
+<!-- ═══════════════════════ SCENE 04 ═══════════════════════ -->
 
-</td>
-<td align="center" width="33%">
+<div align="center">
 
-**🌊 One Virtual Services**
-<br>
-[![GitHub](https://img.shields.io/badge/Open%20Source-181717?style=for-the-badge&logo=github&logoColor=white)](https://1vs.co)
-<br>
-*Virtual Services Provider*
+<img
+  src="https://capsule-render.vercel.app/api?type=rect&color=0:081422,50:126A78,100:081422&height=75&section=header&text=04%20%2F%20BEYOND%20BORDERS&fontSize=22&fontColor=FFFFFF&animation=fadeIn"
+  width="100%"
+  alt="Scene 04 — Beyond Borders"
+/>
 
-</td>
-<td align="center" width="33%">
+<br/>
 
-**☁️ Cloud Monitor**
-<br>
-[![Monitor](https://img.shields.io/badge/Cloud%20Monitor-607D8B?style=for-the-badge&logo=monitoring&logoColor=white)](https://ubd.one/ucloudmonitor)
-<br>
-*Infrastructure monitoring*
+### ONE CULTURE. THREE HORIZONS.
 
-</td>
-</tr>
+<img
+  src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=600&size=18&duration=1700&pause=850&color=68E1FD&center=true&vCenter=true&repeat=true&width=780&height=52&lines=TURKIYE+%E2%86%92+UNITED+STATES+%E2%86%92+ESTONIA;LOCAL+PERSPECTIVES.+GLOBAL+AMBITION.;IDEAS+MOVE+BEYOND+BORDERS."
+  alt="Türkiye, United States, Estonia — ideas move beyond borders."
+/>
+
+<br/>
+
+</div>
+
+<table width="100%">
+  <tr>
+    <td align="center" valign="top" width="33%">
+      <br/>
+      <a href="https://www.ubden.com.tr">
+        <img src="https://flagcdn.com/w160/tr.png" height="64" alt="Flag of Türkiye" />
+      </a>
+      <br/><br/>
+      <strong>01 / TÜRKİYE</strong>
+      <br/><br/>
+      <sub>UBDEN A.Ş.</sub>
+      <br/><br/>
+      <a href="https://www.ubden.com.tr">
+        <img src="https://img.shields.io/badge/EXPLORE-T%C3%9CRK%C4%B0YE-68E1FD?style=for-the-badge&labelColor=081422" alt="Explore Ubden Türkiye" />
+      </a>
+      <br/><br/>
+    </td>
+    <td align="center" valign="top" width="33%">
+      <br/>
+      <a href="https://www.ubden.com">
+        <img src="https://flagcdn.com/w160/us.png" height="64" alt="Flag of the United States" />
+      </a>
+      <br/><br/>
+      <strong>02 / UNITED STATES</strong>
+      <br/><br/>
+      <sub>UBDEN LLC</sub>
+      <br/><br/>
+      <a href="https://www.ubden.com">
+        <img src="https://img.shields.io/badge/EXPLORE-USA-B498FF?style=for-the-badge&labelColor=081422" alt="Explore Ubden USA" />
+      </a>
+      <br/><br/>
+    </td>
+    <td align="center" valign="top" width="33%">
+      <br/>
+      <a href="https://www.ubden.com">
+        <img src="https://flagcdn.com/w160/ee.png" height="64" alt="Flag of Estonia" />
+      </a>
+      <br/><br/>
+      <strong>03 / ESTONIA</strong>
+      <br/><br/>
+      <sub>UBDEN OÜ</sub>
+      <br/><br/>
+      <a href="https://www.ubden.com">
+        <img src="https://img.shields.io/badge/EXPLORE-EUROPE-68E1FD?style=for-the-badge&labelColor=081422" alt="Explore Ubden Europe" />
+      </a>
+      <br/><br/>
+    </td>
+  </tr>
 </table>
 
-</div>
-
----
-
-## 📊 Development Team Statistics
-
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=ubden&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&title_color=00D9FF&icon_color=00D9FF&text_color=ffffff&bg_color=0d1117" />
-<img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=ubden&theme=tokyonight&hide_border=true&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF" />
+<br/>
 
-</div>
-
-<div align="center">
-  
-<img width="60%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ubden&layout=compact&theme=tokyonight&hide_border=true&langs_count=10&title_color=00D9FF&text_color=ffffff&bg_color=0d1117" />
+<img
+  src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=500&size=15&duration=3200&pause=1100&color=B498FF&center=true&vCenter=true&repeat=true&width=850&height=44&lines=%E2%97%89+THREE+LOCATIONS+%2F+ONE+SHARED+FUTURE+%E2%97%89"
+  alt="Three locations. One shared future."
+/>
 
 </div>
 
----
-
-## 🏆 Team Achievements
+<!-- ═══════════════════════ FINAL SCENE ═══════════════════════ -->
 
 <div align="center">
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=ubden&theme=onestar&no-frame=true&column=4&margin-w=15&margin-h=15)](https://github.com/ubden)
+<img
+  src="https://capsule-render.vercel.app/api?type=rect&color=0:081422,50:164B6C,100:081422&height=75&section=header&text=05%20%2F%20YOUR%20MOVE&fontSize=22&fontColor=FFFFFF&animation=fadeIn"
+  width="100%"
+  alt="Scene 05 — Your Move"
+/>
 
-</div>
+<br/>
 
----
+## THE NEXT CHAPTER IS OPEN.
 
-## 📈 Contribution Activity
+<img
+  src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=600&size=19&duration=2600&pause=950&color=68E1FD&center=true&vCenter=true&repeat=true&width=850&height=55&lines=Explore+the+code.;Bring+your+perspective.;Build+what+comes+next."
+  alt="Explore the code. Bring your perspective. Build what comes next."
+/>
 
-<div align="center">
+<br/>
 
-[![Ubden's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=ubden&theme=tokyo-night&hide_border=true&title_color=00D9FF&color=00D9FF&line=00D9FF&point=ffffff)](https://github.com/ubden)
+<a href="https://github.com/ubdencom?tab=repositories">
+  <img src="https://img.shields.io/badge/EXPLORE-PROJECTS-68E1FD?style=for-the-badge&labelColor=081422" alt="Explore projects" />
+</a>
+<a href="mailto:info@ubden.com">
+  <img src="https://img.shields.io/badge/CONTACT-THE_TEAM-B498FF?style=for-the-badge&labelColor=081422" alt="Email the team" />
+</a>
+<a href="https://twitter.com/ubden">
+  <img src="https://img.shields.io/badge/FOLLOW-UBDEN-FFFFFF?style=for-the-badge&labelColor=081422" alt="Follow Ubden" />
+</a>
 
-</div>
+<br/><br/><br/>
 
----
+**OPEN SOURCE IS AN INVITATION TO CREATE TOGETHER.**
 
-## 💡 Development Philosophy
+<sub>UBDEN® · THE CULTURE OF INNOVATION · © 2026</sub>
 
-<div align="center">
-
-*"Innovation is not about saying yes to everything. It's about saying no to all but the most crucial features."*
-
-![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
-
-</div>
-
----
-
-## 🎯 Ubden® 2025 Roadmap
-
-<div align="center">
-
-```mermaid
-graph TD
-    A[🚀 Ubden® 2025 Vision] --> B[🤖 AI Integration]
-    A --> C[☁️ Cloud Excellence]
-    A --> D[🔒 Security First]
-    A --> E[🌍 Global Expansion]
-    
-    B --> B1[Machine Learning Solutions]
-    B --> B2[AI-Powered Applications]
-    
-    C --> C1[Multi-Cloud Architecture]
-    C --> C2[Serverless Solutions]
-    
-    D --> D1[Zero Trust Security]
-    D --> D2[Advanced Threat Protection]
-    
-    E --> E1[International Markets]
-    E --> E2[Enterprise Partnerships]
-    
-    style A fill:#00D9FF,stroke:#ffffff,stroke-width:2px,color:#000000
-    style B fill:#FF6B6B,stroke:#ffffff,stroke-width:2px,color:#ffffff
-    style C fill:#4ECDC4,stroke:#ffffff,stroke-width:2px,color:#ffffff
-    style D fill:#45B7D1,stroke:#ffffff,stroke-width:2px,color:#ffffff
-    style E fill:#96CEB4,stroke:#ffffff,stroke-width:2px,color:#ffffff
-```
-
-</div>
-
----
-
-## 📧 Contact Ubden®
-
-<div align="center">
-
-**🌟 "Technology is best when it brings people together" - Matt Mullenweg**
-
-### Corporate Offices
-
-**🇹🇷 Turkey & Balkans**  
-Ubden® Teknoloji Anonim Şirketi
-
-**🇺🇸 United States**  
-Ubden® LLC
-
-**🇪🇺 Europe**  
-Ubden® OU
-
----
-
-[![Email](https://img.shields.io/badge/Business_Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:info@ubden.com)
-[![Website](https://img.shields.io/badge/Corporate_Website-00D9FF?style=for-the-badge&logo=google-chrome&logoColor=white)](https://ubden.com)
-[![Careers](https://img.shields.io/badge/Join_Our_Team-FF7139?style=for-the-badge&logo=handshake&logoColor=white)](https://ubden.com/careers)
-
----
-
-**⭐ Star our repositories to stay updated with Ubden® innovations! ⭐**
-
----
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=100&section=footer&text=&fontSize=0" width="100%"/>
-
-**© 2025 Ubden® - Building Tomorrow's Technology Today! 🚀**
+<img
+  src="https://capsule-render.vercel.app/api?type=waving&color=0:050B16,45:103457,75:146889,100:050B16&height=145&section=footer"
+  width="100%"
+  alt=""
+/>
 
 </div>
