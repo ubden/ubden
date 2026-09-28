@@ -1,44 +1,38 @@
 <!--
-UBDEN® / ORGANIZATION PROFILE
-GitHub path: .github/profile/README.md
-
-Logo: GitHub organizasyon avatarı (github.com/ubdencom.png)
-Motion: Harici SVG görselleri. GitHub README içinde özel CSS ve JavaScript çalıştırmaz.
+UBDEN® / GitHub Organization Profile
+Place this file at: .github/profile/README.md
 -->
 
 <div align="center">
 
 <img
-  src="https://capsule-render.vercel.app/api?type=waving&color=0:050B16,45:103457,75:146889,100:050B16&height=215&section=header&text=THE%20FUTURE%20IS%20A%20BUILD%20PROCESS&fontSize=27&fontColor=FFFFFF&fontAlignY=38&desc=UBDEN%C2%AE%20%2F%20THE%20CULTURE%20OF%20INNOVATION&descSize=15&descAlignY=60&animation=fadeIn"
+  src="https://capsule-render.vercel.app/api?type=waving&color=0:050B16,45:103457,75:146889,100:050B16&height=230&section=header&text=THE%20FUTURE%20IS%20A%20BUILD%20PROCESS&fontSize=27&fontColor=FFFFFF&fontAlignY=38&desc=UBDEN%C2%AE%20%2F%20THE%20CULTURE%20OF%20INNOVATION&descSize=15&descAlignY=61&animation=fadeIn"
   width="100%"
   alt="UBDEN — The Future Is a Build Process"
 />
 
 <br/>
 
-<a href="https://github.com/ubdencom">
+<a href="https://www.ubden.com">
   <img
-    src="https://github.com/ubdencom.png?size=240"
-    width="150"
-    height="150"
+    src="https://www.ubden.com/assets/images/ubden_light_slogansiz.webp"
+    width="340"
     alt="UBDEN logo"
   />
 </a>
 
 <br/><br/>
 
-# U B D E N ®
-
 ### THE CULTURE OF INNOVATION
 
 <img
-  src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=600&size=19&duration=2500&pause=650&color=68E1FD&center=true&vCenter=true&repeat=true&width=850&height=55&lines=We+imagine+what+could+exist.;We+engineer+what+should+exist.;We+share+what+we+discover."
+  src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=600&size=19&duration=2500&pause=700&color=68E1FD&center=true&vCenter=true&repeat=true&width=850&height=55&lines=We+imagine+what+could+exist.;We+engineer+what+should+exist.;We+share+what+we+discover."
   alt="We imagine, engineer, and share."
 />
 
 <br/>
 
-<a href="https://ubden.com">
+<a href="https://www.ubden.com">
   <img src="https://img.shields.io/badge/01-EXPLORE_UBDEN-68E1FD?style=for-the-badge&labelColor=081422" alt="Explore Ubden" />
 </a>
 <a href="https://github.com/ubdencom?tab=repositories">
@@ -50,22 +44,22 @@ Motion: Harici SVG görselleri. GitHub README içinde özel CSS ve JavaScript ç
 
 <br/><br/>
 
-`OPEN SOURCE` &nbsp; `SOFTWARE` &nbsp; `AI` &nbsp; `AUTOMATION` &nbsp; `CYBERSECURITY`
+`SOFTWARE` &nbsp; `AI & MACHINE LEARNING` &nbsp; `CYBERSECURITY` &nbsp; `AUTOMATION` &nbsp; `OPEN SOURCE`
 
-<br/>
+<br/><br/>
 
-**↓ SCROLL TO ENTER THE UBDEN UNIVERSE ↓**
+**↓ ENTER THE UBDEN UNIVERSE ↓**
 
 </div>
 
 <br/><br/>
 
-<!-- ═══════════════════════ SCENE 01 ═══════════════════════ -->
+<!-- ═══════════════════════ 01 / THE ORIGIN ═══════════════════════ -->
 
 <div align="center">
 
 <img
-  src="https://capsule-render.vercel.app/api?type=rect&color=0:081422,50:164B6C,100:081422&height=75&section=header&text=01%20%2F%20THE%20ORIGIN&fontSize=22&fontColor=FFFFFF&animation=fadeIn"
+  src="https://capsule-render.vercel.app/api?type=rect&color=0:081422,50:164B6C,100:081422&height=76&section=header&text=01%20%2F%20THE%20ORIGIN&fontSize=22&fontColor=FFFFFF&animation=fadeIn"
   width="100%"
   alt="Scene 01 — The Origin"
 />
@@ -76,20 +70,18 @@ Motion: Harici SVG görselleri. GitHub README içinde özel CSS ve JavaScript ç
 
 *What if we could make it better?*
 
-</div>
+<br/>
+
+**UBDEN® is where curiosity becomes engineering.**
+
+We create modern software, explore intelligent systems, investigate security, automate complex workflows, and contribute to open source.
+
+Good technology has a **clear purpose**, **thoughtful execution**, and **room for others to build upon it**.
 
 <br/>
 
-> **UBDEN® is where curiosity becomes engineering.**
->
-> We create modern software, explore artificial intelligence and automation, contribute to open source, and build tools that help people do more with technology.
-
-We believe good technology should have three qualities: **a clear purpose, thoughtful execution, and room for others to build upon it.**
-
-<div align="center">
-
 <img
-  src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=500&size=17&duration=2100&pause=850&color=B498FF&center=true&vCenter=true&repeat=true&width=820&height=45&lines=CURIOSITY+%E2%86%92+EXPERIMENT;EXPERIMENT+%E2%86%92+ENGINEERING;ENGINEERING+%E2%86%92+IMPACT"
+  src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=500&size=17&duration=2100&pause=850&color=B498FF&center=true&vCenter=true&repeat=true&width=820&height=46&lines=CURIOSITY+%E2%86%92+EXPERIMENT;EXPERIMENT+%E2%86%92+ENGINEERING;ENGINEERING+%E2%86%92+IMPACT"
   alt="Curiosity to experiment. Experiment to engineering. Engineering to impact."
 />
 
@@ -97,7 +89,7 @@ We believe good technology should have three qualities: **a clear purpose, thoug
 
 <br/><br/>
 
-<!-- ═══════════════════════ SCENE 02 ═══════════════════════ -->
+<!-- ═══════════════════════ 02 / WHAT WE BUILD ═══════════════════════ -->
 
 <div align="center">
 
@@ -118,166 +110,121 @@ We believe good technology should have three qualities: **a clear purpose, thoug
 
 <br/>
 
-<img src="https://img.shields.io/badge/01-DIGITAL_PRODUCTS-68E1FD?style=flat-square&labelColor=081422" alt="Digital Products" />
-<img src="https://img.shields.io/badge/02-AI_%26_MACHINE_LEARNING-B498FF?style=flat-square&labelColor=081422" alt="AI and Machine Learning" />
-<img src="https://img.shields.io/badge/03-CYBERSECURITY-68E1FD?style=flat-square&labelColor=081422" alt="Cybersecurity" />
-<img src="https://img.shields.io/badge/04-AUTOMATION-B498FF?style=flat-square&labelColor=081422" alt="Automation" />
-<img src="https://img.shields.io/badge/05-DATA_SYSTEMS-68E1FD?style=flat-square&labelColor=081422" alt="Data Systems" />
-<img src="https://img.shields.io/badge/06-OPEN_SOURCE-B498FF?style=flat-square&labelColor=081422" alt="Open Source" />
-
-<br/><br/>
-
 </div>
 
-<table width="100%">
+<table align="center" width="100%">
   <tr>
     <td align="center" valign="top" width="50%">
-      <br/>
-      <img
-        src="https://api.iconify.design/mdi/monitor-cellphone.svg?color=%2368e1fd&width=78&height=78"
-        width="78"
-        height="78"
-        alt="Web and mobile products"
-      />
-      <br/><br/>
-      <strong>01 / DIGITAL PRODUCTS</strong>
-      <br/><br/>
-      <sub>WEB · MOBILE · PRODUCT EXPERIENCE</sub>
-      <br/><br/>
-      <p>
-        Interfaces and applications built to make complex work feel clear,
-        fast, and intuitive.
-      </p>
-      <p>
+      <p align="center">
+        <br/>
+        <img src="https://api.iconify.design/mdi/monitor-cellphone.svg?color=%2368e1fd&width=76&height=76" width="76" height="76" alt="Digital products" />
+        <br/><br/>
+        <strong>01 / DIGITAL PRODUCTS</strong>
+        <br/><br/>
+        <sub>WEB · MOBILE · PRODUCT EXPERIENCE</sub>
+        <br/><br/>
+        Interfaces and applications that make complex work feel clear, fast, and intuitive.
+        <br/><br/>
         <code>Web applications</code> · <code>Mobile experiences</code><br/>
         <code>API integrations</code> · <code>Product interfaces</code>
+        <br/><br/>
+        <sub>REACT · VUE · NODE.JS</sub>
+        <br/><br/>
       </p>
-      <sub>REACT · VUE · NODE.JS</sub>
-      <br/><br/>
     </td>
     <td align="center" valign="top" width="50%">
-      <br/>
-      <img
-        src="https://api.iconify.design/mdi/brain.svg?color=%23b498ff&width=78&height=78"
-        width="78"
-        height="78"
-        alt="Artificial intelligence and machine learning"
-      />
-      <br/><br/>
-      <strong>02 / AI & MACHINE LEARNING</strong>
-      <br/><br/>
-      <sub>MODELS · AGENTS · INTELLIGENT WORKFLOWS</sub>
-      <br/><br/>
-      <p>
-        AI systems that turn data into useful predictions, automate reasoning
-        steps, and support better decisions.
-      </p>
-      <p>
+      <p align="center">
+        <br/>
+        <img src="https://api.iconify.design/mdi/brain.svg?color=%23b498ff&width=76&height=76" width="76" height="76" alt="AI and machine learning" />
+        <br/><br/>
+        <strong>02 / AI & MACHINE LEARNING</strong>
+        <br/><br/>
+        <sub>MODELS · AGENTS · INTELLIGENT WORKFLOWS</sub>
+        <br/><br/>
+        Systems that turn data into useful predictions and support better decisions.
+        <br/><br/>
         <code>LLM integrations</code> · <code>AI agents</code><br/>
         <code>Machine learning</code> · <code>Model evaluation</code>
+        <br/><br/>
+        <sub>PYTHON · TENSORFLOW · OPENAI</sub>
+        <br/><br/>
       </p>
-      <sub>PYTHON · TENSORFLOW · OPENAI</sub>
-      <br/><br/>
     </td>
   </tr>
   <tr>
     <td align="center" valign="top" width="50%">
-      <br/>
-      <img
-        src="https://api.iconify.design/mdi/shield-search.svg?color=%23b498ff&width=78&height=78"
-        width="78"
-        height="78"
-        alt="Cybersecurity research"
-      />
-      <br/><br/>
-      <strong>03 / CYBERSECURITY & BUG BOUNTY</strong>
-      <br/><br/>
-      <sub>DISCOVER · VALIDATE · DEFEND</sub>
-      <br/><br/>
-      <p>
-        Authorized security testing and vulnerability research focused on
-        finding weaknesses and making systems more resilient.
-      </p>
-      <p>
+      <p align="center">
+        <br/>
+        <img src="https://api.iconify.design/mdi/shield-search.svg?color=%23b498ff&width=76&height=76" width="76" height="76" alt="Cybersecurity and bug bounty" />
+        <br/><br/>
+        <strong>03 / CYBERSECURITY & BUG BOUNTY</strong>
+        <br/><br/>
+        <sub>DISCOVER · VALIDATE · DEFEND</sub>
+        <br/><br/>
+        Authorized testing and vulnerability research focused on stronger systems.
+        <br/><br/>
         <code>Penetration testing</code> · <code>Bug bounty</code><br/>
         <code>Attack surface analysis</code> · <code>Security reporting</code>
+        <br/><br/>
+        <sub>WEB · NETWORK · RESPONSIBLE DISCLOSURE</sub>
+        <br/><br/>
       </p>
-      <sub>WEB SECURITY · NETWORK SECURITY · RESPONSIBLE DISCLOSURE</sub>
-      <br/><br/>
     </td>
     <td align="center" valign="top" width="50%">
-      <br/>
-      <img
-        src="https://api.iconify.design/mdi/cog-sync-outline.svg?color=%2368e1fd&width=78&height=78"
-        width="78"
-        height="78"
-        alt="Automation and DevOps"
-      />
-      <br/><br/>
-      <strong>04 / AUTOMATION & DEVOPS</strong>
-      <br/><br/>
-      <sub>BUILD · DEPLOY · OPERATE</sub>
-      <br/><br/>
-      <p>
-        Repeatable workflows and dependable infrastructure that help teams
-        deliver and operate software with confidence.
-      </p>
-      <p>
+      <p align="center">
+        <br/>
+        <img src="https://api.iconify.design/mdi/cog-sync-outline.svg?color=%2368e1fd&width=76&height=76" width="76" height="76" alt="Automation and DevOps" />
+        <br/><br/>
+        <strong>04 / AUTOMATION & DEVOPS</strong>
+        <br/><br/>
+        <sub>BUILD · DEPLOY · OPERATE</sub>
+        <br/><br/>
+        Repeatable workflows and dependable infrastructure for software at scale.
+        <br/><br/>
         <code>Workflow automation</code> · <code>CI/CD</code><br/>
         <code>Containers</code> · <code>Infrastructure operations</code>
+        <br/><br/>
+        <sub>DOCKER · KUBERNETES · GITHUB ACTIONS</sub>
+        <br/><br/>
       </p>
-      <sub>DOCKER · KUBERNETES · GITHUB ACTIONS</sub>
-      <br/><br/>
     </td>
   </tr>
   <tr>
     <td align="center" valign="top" width="50%">
-      <br/>
-      <img
-        src="https://api.iconify.design/mdi/database-search-outline.svg?color=%2368e1fd&width=78&height=78"
-        width="78"
-        height="78"
-        alt="Data systems"
-      />
-      <br/><br/>
-      <strong>05 / DATA SYSTEMS</strong>
-      <br/><br/>
-      <sub>COLLECT · STRUCTURE · UNDERSTAND</sub>
-      <br/><br/>
-      <p>
-        Data pipelines and storage systems that make information accessible,
-        reliable, and ready for meaningful use.
-      </p>
-      <p>
+      <p align="center">
+        <br/>
+        <img src="https://api.iconify.design/mdi/database-search-outline.svg?color=%2368e1fd&width=76&height=76" width="76" height="76" alt="Data systems" />
+        <br/><br/>
+        <strong>05 / DATA SYSTEMS</strong>
+        <br/><br/>
+        <sub>COLLECT · STRUCTURE · UNDERSTAND</sub>
+        <br/><br/>
+        Pipelines and storage systems that make information accessible and useful.
+        <br/><br/>
         <code>Data processing</code> · <code>Integrations</code><br/>
         <code>Analytics</code> · <code>Database architecture</code>
+        <br/><br/>
+        <sub>SQL · NOSQL · PYTHON</sub>
+        <br/><br/>
       </p>
-      <sub>SQL · NOSQL · PYTHON</sub>
-      <br/><br/>
     </td>
     <td align="center" valign="top" width="50%">
-      <br/>
-      <img
-        src="https://api.iconify.design/mdi/source-branch.svg?color=%23b498ff&width=78&height=78"
-        width="78"
-        height="78"
-        alt="Open-source collaboration"
-      />
-      <br/><br/>
-      <strong>06 / OPEN SOURCE</strong>
-      <br/><br/>
-      <sub>SHARE · COLLABORATE · IMPROVE</sub>
-      <br/><br/>
-      <p>
-        Useful tools, shared knowledge, and contributions that give other
-        builders a stronger starting point.
-      </p>
-      <p>
+      <p align="center">
+        <br/>
+        <img src="https://api.iconify.design/mdi/source-branch.svg?color=%23b498ff&width=76&height=76" width="76" height="76" alt="Open source" />
+        <br/><br/>
+        <strong>06 / OPEN SOURCE</strong>
+        <br/><br/>
+        <sub>SHARE · COLLABORATE · IMPROVE</sub>
+        <br/><br/>
+        Useful tools and shared knowledge that give other builders a stronger starting point.
+        <br/><br/>
         <code>Developer tools</code> · <code>Documentation</code><br/>
         <code>Community projects</code> · <code>Collaboration</code>
+        <br/><br/>
+        <sub>CODE IS BETTER WHEN IDEAS CAN TRAVEL</sub>
+        <br/><br/>
       </p>
-      <sub>CODE IS BETTER WHEN IDEAS CAN TRAVEL</sub>
-      <br/><br/>
     </td>
   </tr>
 </table>
@@ -303,16 +250,20 @@ We believe good technology should have three qualities: **a clear purpose, thoug
 
 <br/>
 
-[![Explore our repositories](https://img.shields.io/badge/%E2%86%92_EXPLORE_WHAT_WE_BUILD-68E1FD?style=for-the-badge&labelColor=081422)](https://github.com/ubdencom?tab=repositories)
+<a href="https://github.com/ubdencom?tab=repositories">
+  <img src="https://img.shields.io/badge/%E2%86%92_EXPLORE_WHAT_WE_BUILD-68E1FD?style=for-the-badge&labelColor=081422" alt="Explore our repositories" />
+</a>
 
 </div>
 
-<!-- ═══════════════════════ SCENE 03 ═══════════════════════ -->
+<br/><br/>
+
+<!-- ═══════════════════════ 03 / THE CREW ═══════════════════════ -->
 
 <div align="center">
 
 <img
-  src="https://capsule-render.vercel.app/api?type=rect&color=0:081422,50:514A8E,100:081422&height=75&section=header&text=03%20%2F%20THE%20CREW&fontSize=22&fontColor=FFFFFF&animation=fadeIn"
+  src="https://capsule-render.vercel.app/api?type=rect&color=0:081422,50:514A8E,100:081422&height=76&section=header&text=03%20%2F%20THE%20CREW&fontSize=22&fontColor=FFFFFF&animation=fadeIn"
   width="100%"
   alt="Scene 03 — The Crew"
 />
@@ -327,92 +278,107 @@ We believe good technology should have three qualities: **a clear purpose, thoug
 
 </div>
 
-<table width="100%">
+<table align="center" width="100%">
   <tr>
-    <td align="center" valign="top" width="33%">
-      <br/>
-      <a href="https://github.com/ck-cankurt/ck-cankurt" title="Can Kurt">
-        <img src="https://api.iconify.design/mdi/compass-outline.svg?color=%2368e1fd&width=88&height=88" width="88" height="88" alt="Project management emblem" />
+    <td align="center" valign="middle" width="33%">
+      <p align="center">
+        <br/>
+        <a href="https://github.com/ck-cankurt/ck-cankurt" title="Can Kurt">
+          <img src="https://api.iconify.design/mdi/compass-outline.svg?color=%2368e1fd&width=88&height=88" width="88" height="88" alt="Project management" />
+          <br/><br/>
+          <strong>PROJECT<br/>MANAGEMENT</strong>
+        </a>
         <br/><br/>
-        <strong>PROJECT<br/>MANAGEMENT</strong>
-      </a>
-      <br/><br/>
-      <sub>STRATEGY · COORDINATION</sub>
-      <br/><br/>
+        <sub>STRATEGY · COORDINATION</sub>
+        <br/><br/>
+      </p>
     </td>
-    <td align="center" valign="top" width="33%">
-      <br/>
-      <a href="https://github.com/kemalincekara" title="Kemal İncekara">
-        <img src="https://api.iconify.design/mdi/server-network.svg?color=%23b498ff&width=88&height=88" width="88" height="88" alt="Backend development emblem" />
+    <td align="center" valign="middle" width="33%">
+      <p align="center">
+        <br/>
+        <a href="https://github.com/kemalincekara" title="Kemal İncekara">
+          <img src="https://api.iconify.design/mdi/server-network.svg?color=%23b498ff&width=88&height=88" width="88" height="88" alt="Backend development" />
+          <br/><br/>
+          <strong>BACKEND<br/>DEVELOPMENT</strong>
+        </a>
         <br/><br/>
-        <strong>BACKEND<br/>DEVELOPMENT</strong>
-      </a>
-      <br/><br/>
-      <sub>ARCHITECTURE · SYSTEMS</sub>
-      <br/><br/>
+        <sub>ARCHITECTURE · SYSTEMS</sub>
+        <br/><br/>
+      </p>
     </td>
-    <td align="center" valign="top" width="33%">
-      <br/>
-      <a href="https://github.com/dogukau" title="Doğukan">
-        <img src="https://api.iconify.design/mdi/lightbulb-on-outline.svg?color=%2368e1fd&width=88&height=88" width="88" height="88" alt="Product development emblem" />
+    <td align="center" valign="middle" width="33%">
+      <p align="center">
+        <br/>
+        <a href="https://github.com/dogukau" title="Doğukan">
+          <img src="https://api.iconify.design/mdi/lightbulb-on-outline.svg?color=%2368e1fd&width=88&height=88" width="88" height="88" alt="Product development" />
+          <br/><br/>
+          <strong>PRODUCT<br/>DEVELOPMENT</strong>
+        </a>
         <br/><br/>
-        <strong>PRODUCT<br/>DEVELOPMENT</strong>
-      </a>
-      <br/><br/>
-      <sub>IDEAS · EXPERIENCES</sub>
-      <br/><br/>
+        <sub>IDEAS · EXPERIENCES</sub>
+        <br/><br/>
+      </p>
     </td>
   </tr>
   <tr>
-    <td align="center" valign="top" width="33%">
-      <br/>
-      <a href="https://github.com/ruslancik" title="Ruslan">
-        <img src="https://api.iconify.design/mdi/animation-play-outline.svg?color=%23b498ff&width=88&height=88" width="88" height="88" alt="Frontend animation emblem" />
+    <td align="center" valign="middle" width="33%">
+      <p align="center">
+        <br/>
+        <a href="https://github.com/ruslancik" title="Ruslan">
+          <img src="https://api.iconify.design/mdi/animation-play-outline.svg?color=%23b498ff&width=88&height=88" width="88" height="88" alt="Frontend and motion" />
+          <br/><br/>
+          <strong>FRONTEND<br/>& MOTION</strong>
+        </a>
         <br/><br/>
-        <strong>FRONTEND<br/>& MOTION</strong>
-      </a>
-      <br/><br/>
-      <sub>INTERFACES · GSAP</sub>
-      <br/><br/>
+        <sub>INTERFACES · GSAP</sub>
+        <br/><br/>
+      </p>
     </td>
-    <td align="center" valign="top" width="33%">
-      <br/>
-      <a href="https://github.com/CanerDedeoglu/CanerDedeoglu" title="Caner Dedeoğlu">
-        <img src="https://api.iconify.design/mdi/code-braces.svg?color=%2368e1fd&width=88&height=88" width="88" height="88" alt="Software engineering emblem" />
+    <td align="center" valign="middle" width="33%">
+      <p align="center">
+        <br/>
+        <a href="https://github.com/CanerDedeoglu/CanerDedeoglu" title="Caner Dedeoğlu">
+          <img src="https://api.iconify.design/mdi/code-braces.svg?color=%2368e1fd&width=88&height=88" width="88" height="88" alt="Software engineering" />
+          <br/><br/>
+          <strong>SOFTWARE<br/>ENGINEERING</strong>
+        </a>
         <br/><br/>
-        <strong>SOFTWARE<br/>ENGINEERING</strong>
-      </a>
-      <br/><br/>
-      <sub>DESIGN · DELIVERY</sub>
-      <br/><br/>
+        <sub>DESIGN · DELIVERY</sub>
+        <br/><br/>
+      </p>
     </td>
-    <td align="center" valign="top" width="33%">
-      <br/>
-      <a href="https://github.com/dedeoglukaan/dedeoglukaan" title="Kaan Dedeoğlu">
-        <img src="https://api.iconify.design/mdi/shield-lock-outline.svg?color=%23b498ff&width=88&height=88" width="88" height="88" alt="Cybersecurity emblem" />
+    <td align="center" valign="middle" width="33%">
+      <p align="center">
+        <br/>
+        <a href="https://github.com/dedeoglukaan/dedeoglukaan" title="Kaan Dedeoğlu">
+          <img src="https://api.iconify.design/mdi/shield-lock-outline.svg?color=%23b498ff&width=88&height=88" width="88" height="88" alt="Cybersecurity" />
+          <br/><br/>
+          <strong>CYBER<br/>SECURITY</strong>
+        </a>
         <br/><br/>
-        <strong>CYBER<br/>SECURITY</strong>
-      </a>
-      <br/><br/>
-      <sub>DEFENSE · RESILIENCE</sub>
-      <br/><br/>
+        <sub>DEFENSE · RESILIENCE</sub>
+        <br/><br/>
+      </p>
     </td>
   </tr>
 </table>
 
 <div align="center">
-  <br/>
-  <sub>◈ THE ROLE IS THE SIGNAL. THE PEOPLE MAKE IT REAL. ◈</sub>
+
+<br/>
+
+<sub>◈ THE ROLE IS THE SIGNAL. THE PEOPLE MAKE IT REAL. ◈</sub>
+
 </div>
 
 <br/><br/>
 
-<!-- ═══════════════════════ SCENE 04 ═══════════════════════ -->
+<!-- ═══════════════════════ 04 / BEYOND BORDERS ═══════════════════════ -->
 
 <div align="center">
 
 <img
-  src="https://capsule-render.vercel.app/api?type=rect&color=0:081422,50:126A78,100:081422&height=75&section=header&text=04%20%2F%20BEYOND%20BORDERS&fontSize=22&fontColor=FFFFFF&animation=fadeIn"
+  src="https://capsule-render.vercel.app/api?type=rect&color=0:081422,50:126A78,100:081422&height=76&section=header&text=04%20%2F%20BEYOND%20BORDERS&fontSize=22&fontColor=FFFFFF&animation=fadeIn"
   width="100%"
   alt="Scene 04 — Beyond Borders"
 />
@@ -430,52 +396,58 @@ We believe good technology should have three qualities: **a clear purpose, thoug
 
 </div>
 
-<table width="100%">
+<table align="center" width="100%">
   <tr>
-    <td align="center" valign="top" width="33%">
-      <br/>
-      <a href="https://www.ubden.com.tr">
-        <img src="https://flagcdn.com/w160/tr.png" height="64" alt="Flag of Türkiye" />
-      </a>
-      <br/><br/>
-      <strong>01 / TÜRKİYE</strong>
-      <br/><br/>
-      <sub>UBDEN A.Ş.</sub>
-      <br/><br/>
-      <a href="https://www.ubden.com.tr">
-        <img src="https://img.shields.io/badge/EXPLORE-T%C3%9CRK%C4%B0YE-68E1FD?style=for-the-badge&labelColor=081422" alt="Explore Ubden Türkiye" />
-      </a>
-      <br/><br/>
+    <td align="center" valign="middle" width="33%">
+      <p align="center">
+        <br/>
+        <a href="https://www.ubden.com.tr">
+          <img src="https://flagcdn.com/w160/tr.png" height="64" alt="Flag of Türkiye" />
+        </a>
+        <br/><br/>
+        <strong>01 / TÜRKİYE</strong>
+        <br/><br/>
+        <sub>UBDEN A.Ş.</sub>
+        <br/><br/>
+        <a href="https://www.ubden.com.tr">
+          <img src="https://img.shields.io/badge/EXPLORE-T%C3%9CRK%C4%B0YE-68E1FD?style=for-the-badge&labelColor=081422" alt="Explore Ubden Türkiye" />
+        </a>
+        <br/><br/>
+      </p>
     </td>
-    <td align="center" valign="top" width="33%">
-      <br/>
-      <a href="https://www.ubden.com">
-        <img src="https://flagcdn.com/w160/us.png" height="64" alt="Flag of the United States" />
-      </a>
-      <br/><br/>
-      <strong>02 / UNITED STATES</strong>
-      <br/><br/>
-      <sub>UBDEN LLC</sub>
-      <br/><br/>
-      <a href="https://www.ubden.com">
-        <img src="https://img.shields.io/badge/EXPLORE-USA-B498FF?style=for-the-badge&labelColor=081422" alt="Explore Ubden USA" />
-      </a>
-      <br/><br/>
+    <td align="center" valign="middle" width="33%">
+      <p align="center">
+        <br/>
+        <a href="https://www.ubden.com">
+          <img src="https://flagcdn.com/w160/us.png" height="64" alt="Flag of the United States" />
+        </a>
+        <br/><br/>
+        <strong>02 / UNITED STATES</strong>
+        <br/><br/>
+        <sub>UBDEN LLC</sub>
+        <br/><br/>
+        <a href="https://www.ubden.com">
+          <img src="https://img.shields.io/badge/EXPLORE-USA-B498FF?style=for-the-badge&labelColor=081422" alt="Explore Ubden USA" />
+        </a>
+        <br/><br/>
+      </p>
     </td>
-    <td align="center" valign="top" width="33%">
-      <br/>
-      <a href="https://www.ubden.com">
-        <img src="https://flagcdn.com/w160/ee.png" height="64" alt="Flag of Estonia" />
-      </a>
-      <br/><br/>
-      <strong>03 / ESTONIA</strong>
-      <br/><br/>
-      <sub>UBDEN OÜ</sub>
-      <br/><br/>
-      <a href="https://www.ubden.com">
-        <img src="https://img.shields.io/badge/EXPLORE-EUROPE-68E1FD?style=for-the-badge&labelColor=081422" alt="Explore Ubden Europe" />
-      </a>
-      <br/><br/>
+    <td align="center" valign="middle" width="33%">
+      <p align="center">
+        <br/>
+        <a href="https://www.ubden.com">
+          <img src="https://flagcdn.com/w160/ee.png" height="64" alt="Flag of Estonia" />
+        </a>
+        <br/><br/>
+        <strong>03 / ESTONIA</strong>
+        <br/><br/>
+        <sub>UBDEN OÜ</sub>
+        <br/><br/>
+        <a href="https://www.ubden.com">
+          <img src="https://img.shields.io/badge/EXPLORE-EUROPE-68E1FD?style=for-the-badge&labelColor=081422" alt="Explore Ubden Europe" />
+        </a>
+        <br/><br/>
+      </p>
     </td>
   </tr>
 </table>
@@ -491,12 +463,14 @@ We believe good technology should have three qualities: **a clear purpose, thoug
 
 </div>
 
-<!-- ═══════════════════════ FINAL SCENE ═══════════════════════ -->
+<br/><br/>
+
+<!-- ═══════════════════════ 05 / YOUR MOVE ═══════════════════════ -->
 
 <div align="center">
 
 <img
-  src="https://capsule-render.vercel.app/api?type=rect&color=0:081422,50:164B6C,100:081422&height=75&section=header&text=05%20%2F%20YOUR%20MOVE&fontSize=22&fontColor=FFFFFF&animation=fadeIn"
+  src="https://capsule-render.vercel.app/api?type=rect&color=0:081422,50:164B6C,100:081422&height=76&section=header&text=05%20%2F%20YOUR%20MOVE&fontSize=22&fontColor=FFFFFF&animation=fadeIn"
   width="100%"
   alt="Scene 05 — Your Move"
 />
