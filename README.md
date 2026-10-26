@@ -401,7 +401,7 @@ Good technology has a **clear purpose**, **thoughtful execution**, and **room fo
     <td align="center" valign="middle" width="33%">
       <p align="center">
         <br/>
-        <a href="https://www.ubden.com.tr">
+        <a href="https://www.ubden.com/?lang=tr">
           <img src="https://flagcdn.com/w160/tr.png" height="64" alt="Flag of Türkiye" />
         </a>
         <br/><br/>
@@ -409,7 +409,7 @@ Good technology has a **clear purpose**, **thoughtful execution**, and **room fo
         <br/><br/>
         <sub>UBDEN A.Ş.</sub>
         <br/><br/>
-        <a href="https://www.ubden.com.tr">
+        <a href="https://www.ubden.com/?lang=tr">
           <img src="https://img.shields.io/badge/EXPLORE-T%C3%9CRK%C4%B0YE-68E1FD?style=for-the-badge&labelColor=081422" alt="Explore Ubden Türkiye" />
         </a>
         <br/><br/>
